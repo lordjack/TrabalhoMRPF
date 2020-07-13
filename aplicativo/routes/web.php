@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+Route::get('/escolas', function () {
+	return view('escola');
+});
+
+Route::get('/escola', 'EscolaController@listar');

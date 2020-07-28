@@ -2,21 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>@yield('titulo')</title>
   </head>
   <body>
-    <a href="{{ url('/')}}">Home</a>
-    <div class="">
-      @yield('cabecalho')
-    </div>
+    <div class="container">
+      <a href="{{ url('/')}}">Home</a>
 
-    <div class="">
-      @yield('listagem')
-    </div>
+      <div class="">
+        @yield('cabecalho')
+      </div>
 
-    <div class="">
-      <b>&copy;2020</b>
-    </div>
+      <div class="">
+        @yield('listagem')
+      </div>
 
+      <div class="">
+        <b>&copy;2020</b>
+      </div>
+    </div>
   </body>
 </html>

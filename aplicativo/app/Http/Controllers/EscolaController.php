@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class EscolaController extends Controller
 {
     public function listar(){
-      $escolas = Escola::orderBy('nome')>get();
+      $escolas = Escola::get();
 
-      return view('escola')->with('escolas',$escolas);
+      return view('escolas')->with('escolas',$escolas);
     }
 
 

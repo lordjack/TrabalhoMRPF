@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('main');
 });
 
+Route::get('/login', function (){
+  return view('login');
+});
+
 Route::get('/alunos', 'AlunoController@listar');
 Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
 Route::post('/alunos/salvar/{id}', 'AlunoController@salvar');

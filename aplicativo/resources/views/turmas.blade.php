@@ -12,7 +12,7 @@
 <table class='table'>
 <tr>
   <th>Id</th>
-  <th>Curso_Id</th>
+  <th>Curso</th>
   <th>Nome</th>
   <th>Turno</th>
   <th>Série</th>
@@ -22,7 +22,7 @@
   @foreach($turmas as $item)
 <tr>
     <td>{{$item->id}}</td>
-    <td>{{$item->curso_id}}</td>
+    <td>{{$item->curso}}</td>
     <td>{{$item->nome}}</td>
     <td>{{$item->turno}}</td>
     <td>{{$item->serie}}</td>

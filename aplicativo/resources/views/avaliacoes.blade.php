@@ -13,7 +13,7 @@
 <tr>
   <th>Id</th>
   <th>Aluno_Id</th>
-  <th>Questionario_id</th>
+  <th>Questionario</th>
   <th>Data</th>
   <th>Ações</th>
 </tr>
@@ -22,7 +22,7 @@
 <tr>
     <td>{{$item->id}}</td>
     <td>{{$item->aluno_id}}</td>
-    <td>{{$item->questionario_id}}</td>
+    <td>{{$item->questionario}}</td>
     <td>{{$item->data}}</td>
     <td>
       <a href="{{ action('AvaliacaoController@editar', $item->id) }}">Editar</a>

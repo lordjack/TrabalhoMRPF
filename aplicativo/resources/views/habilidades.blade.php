@@ -14,7 +14,7 @@
   <th>Id</th>
   <th>Nome</th>
   <th>Peso da Competencia</th>
-  <th>Questionário_Id</th>
+  <th>Questionário</th>
   <th>Ações</th>
 </tr>
 
@@ -23,7 +23,7 @@
     <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
     <td>{{$item->peso_competencia}}</td>
-    <td>{{$item->questionario_id}}</td>
+    <td>{{$item->questionario}}</td>
     <td>
       <a href="{{ action('HabilidadeController@editar', $item->id) }}">Editar</a>
       <a href="{{ action('HabilidadeController@deletar', $item->id) }}">Excluir</a>

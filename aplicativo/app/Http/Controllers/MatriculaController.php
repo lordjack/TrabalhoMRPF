@@ -3,12 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Matricula;
+use App\Aluno;
+use App\Curso;
+use App\Turma;
 use Illuminate\Http\Request;
 
 class MatriculaController extends Controller
 {
   public function listar(){
     $matricula = Matricula::get();
+    foreach ($matricula as $item) {
+
+      $curso = Curso::find($item->curso_id);
+      $turma = Turma::find($item->turma_id);
+
+      $item->curso = $curso->nome;
+      $item->turma = $turma->nome;
+    }
 
     return view('matriculas')->with('matriculas',$matricula);
   }

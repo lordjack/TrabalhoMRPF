@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Pessoa;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
   public function listar(){
+
     $aluno = Aluno::get();
+
+    foreach ($aluno as $item) {
+
+      $pessoa = Pessoa::find($item->pessoa_id);
+
+      $item->nome = $pessoa->nome;
+      $item->email = $pessoa->email;
+      $item->cpf =$pessoa->cpf;
+      $item->celular1 = $pessoa->celular1;
+      $item->celular2 = $pessoa->celular2;
+      $item->celular3 = $pessoa->celular3;
+    }
 
     return view('alunos')->with('alunos',$aluno);
   }

@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Turma;
+use App\Curso;
 use Illuminate\Http\Request;
 
 class TurmaController extends Controller
 {
   public function listar(){
-    $turmas = Turma::get();
+    $turma = Turma::get();
 
-    return view('turmas')->with('turmas',$turmas);
+    foreach ($turma as $item) {
+      $curso = Curso::find($item->curso_id);
+
+      $item->curso = $curso->nome;
+    }
+
+    return view('turmas')->with('turmas',$turma);
   }
   public function cadastrar()
   {

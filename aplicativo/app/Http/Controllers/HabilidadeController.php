@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Habilidade;
+use App\Questionario;
 use Illuminate\Http\Request;
 
 class HabilidadeController extends Controller
@@ -10,7 +11,13 @@ class HabilidadeController extends Controller
   public function listar(){
     $habilidade = Habilidade::get();
 
-    return view('halibidades')->with('halibidades',$halibidade);
+    foreach ($habilidade as $item) {
+      $questionario = Questionario::find($item->questionario_id);
+
+      $item->questionario = $questionario->titulo;
+    }
+
+    return view('habilidades')->with('habilidades',$habilidade);
   }
   public function cadastrar()
   {

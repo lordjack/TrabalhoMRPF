@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Questionario;
+use App\Disciplina;
 use Illuminate\Http\Request;
 
 class QuestionarioController extends Controller
@@ -10,12 +11,20 @@ class QuestionarioController extends Controller
   public function listar(){
     $questionario = Questionario::get();
 
+    foreach ($questionario as $item) {
+
+      $disciplina = Disciplina::find($item->disciplina_id);
+      $item->disciplina = $disciplina->nome;
+    }
+
     return view('questionarios')->with('questionarios',$questionario);
   }
+
   public function cadastrar()
   {
     return view('questionarioCadastrar');
   }
+
   public function salvar(Request $request, $id)
   {
     if ($id === 0){

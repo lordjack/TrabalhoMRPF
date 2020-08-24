@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class DisciplinaController extends Controller
 {
   public function listar(){
-    $disciplinas = Disciplina::get();
+    $disciplina = Disciplina::get();
 
-    return view('disciplinas')->with('disciplinas',$disciplinas);
+    return view('disciplinas')->with('disciplinas',$disciplina);
   }
   public function cadastrar()
   {

@@ -12,7 +12,12 @@
 <table class='table'>
 <tr>
   <th>Id</th>
-  <th>Pessoa_Id</th>
+  <th>Nome</th>
+  <th>E-Mail</th>
+  <th>CPF</th>
+  <th>Contato1</th>
+  <th>Contato2</th>
+  <th>Contato3</th>
   <th>Area</th>
   <th>Titulação</th>
   <th>Formação</th>
@@ -22,7 +27,12 @@
   @foreach($professores as $item)
 <tr>
     <td>{{$item->id}}</td>
-    <td>{{$item->pessoa_id}}</td>
+    <td>{{$item->nome}}</td>
+    <td>{{$item->email}}</td>
+    <td>{{$item->cpf}}</td>
+    <td>{{$item->celular1}}</td>
+    <td>{{$item->celular2}}</td>
+    <td>{{$item->celular3}}</td>
     <td>{{$item->area}}</td>
     <td>{{$item->titulacao}}</td>
     <td>{{$item->formacao}}</td>

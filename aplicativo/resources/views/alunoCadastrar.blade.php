@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form  action="{{ action('AlunoController@salvar', 0) }}" method="post">
-      @csrf
-      
+@extends('cadastrar')
 
-      <input type="submit" value="Salvar">
-    </form>
-  </body>
-</html>
+@section('titulo', 'Cadastrar Alunos')
+
+@section('campos')
+
+      <label>Nome</label><br>
+      <input type="text" name="nome"><br>
+      <label>Email</label><br>
+      <input type="text" name="email"><br>
+      <label>CPF</label><br>
+      <input type="text" name="cp"><br>
+      <label>Contato 1</label><br>
+      <input type="text" name="celular1"><br>
+      <label>Contato 2</label><br>
+      <input type="text" name="celular2"><br>
+      <label>Contato 2</label><br>
+      <input type="text" name="celular3"><br>
+
+@stop

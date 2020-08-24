@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Professor;
+use App\Pessoa;
 use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
   public function listar(){
     $professor = Professor::get();
+
+    foreach ($professor as $item) {
+
+      $pessoa = Pessoa::find($item->pessoa_id);
+
+      $item->nome = $pessoa->nome;
+      $item->email = $pessoa->email;
+      $item->cpf =$pessoa->cpf;
+      $item->celular1 = $pessoa->celular1;
+      $item->celular2 = $pessoa->celular2;
+      $item->celular3 = $pessoa->celular3;
+    }
 
     return view('professores')->with('professores',$professor);
   }

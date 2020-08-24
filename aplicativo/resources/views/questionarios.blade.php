@@ -12,7 +12,7 @@
 <table class='table'>
 <tr>
   <th>Id</th>
-  <th>Disciplina_Id</th>
+  <th>Disciplina</th>
   <th>Título</th>
   <th>Peso da Competência 1</th>
   <th>Peso da Competência 2</th>
@@ -23,7 +23,7 @@
   @foreach($questionarios as $item)
 <tr>
     <td>{{$item->id}}</td>
-    <td>{{$item->disciplina_id}}</td>
+    <td>{{$item->disciplina}}</td>
     <td>{{$item->titulo}}</td>
     <td>{{$item->peso_competencia1}}</td>
     <td>{{$item->peso_competencia2}}</td>

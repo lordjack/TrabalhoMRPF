@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Curso;
+use App\Escola;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
@@ -10,7 +11,13 @@ class CursoController extends Controller
   public function listar(){
     $curso = Curso::get();
 
-    return view('cursos')->with('cursos',$cursos);
+    foreach ($curso as $item) {
+      $escola = Escola::find($item->escola_id);
+      $item->escola = $escola->nome;
+
+    }
+
+    return view('cursos')->with('cursos',$curso);
   }
   public function cadastrar()
   {
@@ -21,7 +28,7 @@ class CursoController extends Controller
     if ($id === 0){
     $curso = new Curso();
     $curso->nome = $request->input('nome');
-    $curso->curso_id = $request->input('curso_id');
+    $curso->escola_id = $request->input('escola_id');
     $curso->data_inicio = $request->input('data_inicio');
     $curso->data_fim = $request->input('data_fim');
 

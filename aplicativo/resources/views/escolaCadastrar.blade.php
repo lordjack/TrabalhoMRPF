@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form  action="{{ action('EscolaController@salvar', 0) }}" method="post">
-      @csrf
+@extends('cadastrar')
+
+@section('titulo', 'Cadastrar Escolas')
+
+@section('campos')
 
       <label>Nome</label><br>
       <input type="text" name="nome"><br>
@@ -23,7 +19,4 @@
       <label>CNPJ</label><br>
       <input type="text" name="cnpj"><br>
 
-      <input type="submit" value="Salvar">
-    </form>
-  </body>
-</html>
+@stop

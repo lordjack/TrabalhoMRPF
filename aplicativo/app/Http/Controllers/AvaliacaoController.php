@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Avaliacao;
+use App\Questionario;
 use Illuminate\Http\Request;
 
 class AvaliacaoController extends Controller
 {
   public function listar(){
     $avaliacao = Avaliacao::get();
+
+    foreach ($avaliacao as $item) {
+      $questionario = Questionario::find($item->questionario_id);
+
+      $item->questionario = $questionario->titulo;
+
+    }
 
     return view('avaliacoes')->with('avaliacoes',$avaliacao);
   }

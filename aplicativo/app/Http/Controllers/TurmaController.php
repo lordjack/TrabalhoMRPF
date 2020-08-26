@@ -11,12 +11,6 @@ class TurmaController extends Controller
   public function listar(){
     $turma = Turma::get();
 
-    foreach ($turma as $item) {
-      $curso = Curso::find($item->curso_id);
-
-      $item->curso = $curso->nome;
-    }
-
     return view('turmas')->with('turmas',$turma);
   }
   public function cadastrar()
@@ -25,7 +19,7 @@ class TurmaController extends Controller
   }
   public function salvar(Request $request, $id)
   {
-    if ($id === 0){
+    if ($id == 0){
     $turma = new Turma();
     $turma->nome = $request->input('nome');
     $turma->curso_id = $request->input('curso_id');
@@ -35,7 +29,17 @@ class TurmaController extends Controller
     $turma->save();
 
     return redirect()->action('TurmaController@listar');
-    }
+  }else {
+    $turma = Turma::find($id);
+    $turma->nome = $request->input('nome');
+    $turma->curso_id = $request->input('curso_id');
+    $turma->turno = $request->input('turno');
+    $turma->serie = $request->input('serie');
+
+    $turma->save();
+
+    return redirect()->action('TurmaController@listar');
+  }
 }
 public function editar($id)
 {

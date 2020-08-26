@@ -15,7 +15,9 @@ class CreateProfessor extends Migration
     {
         Schema::create('professor', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pessoa_id');
+            $table->string('nome');
+            $table->string('email');
+            $table->string('contato');
             $table->string('area');
             $table->string('titulacao');
             $table->string('formacao');

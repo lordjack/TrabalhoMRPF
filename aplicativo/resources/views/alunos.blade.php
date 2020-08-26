@@ -9,15 +9,17 @@
 
 
 @section('listagem')
+
 <table class='table'>
 <tr>
   <th>Id</th>
   <th>Nome</th>
+  <th>Número</th>
+  <th>Matrícula</th>
+  <th>Turma</th>
   <th>Email</th>
-  <th>CPF</th>
-  <th>Contato 1</th>
-  <th>Contato 2</th>
-  <th>Contato 3</th>
+  <th>Contato</th>
+  <th>Contato dos Responsáveis</th>
   <th>Ações</th>
 </tr>
 
@@ -25,11 +27,12 @@
 <tr>
     <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
+    <td>{{$item->numero}}</td>
+    <td>{{$item->matricula}}</td>
+    <td>{{$item->turma}}</td>
     <td>{{$item->email}}</td>
-    <td>{{$item->cpf}}</td>
-    <td>{{$item->celular1}}</td>
-    <td>{{$item->celular2}}</td>
-    <td>{{$item->celular3}}</td>
+    <td>{{$item->contato}}</td>
+    <td>{{$item->contato_responsaveis}}</td>
     <td>
       <a href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
       <a href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>

@@ -15,7 +15,13 @@ class CreateAluno extends Migration
     {
         Schema::create('aluno', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pessoa_id');
+            $table->string('nome');
+            $table->string('numero');
+            $table->string('matricula');
+            $table->string('email');
+            $table->string('contato');
+            $table->string('contato_responsaveis');
+            $table->foreignId('turma_id')->constrained('turma');
             $table->timestamps();
         });
     }

@@ -7,14 +7,7 @@
   </head>
   <body>
     <div class="container">
-
-    <form class="" action="{{ action('AlunoController@salvar', 0) }}" method="post">
-      @csrf
-      @yield('campos')
-
-      <input type="submit" class="btn btn-primary" value="Salvar">
-    </form>
-
+      @yield('form')
   </div>
   </body>
 </html>

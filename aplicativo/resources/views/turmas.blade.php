@@ -27,8 +27,9 @@
     <td>{{$item->turno}}</td>
     <td>{{$item->serie}}</td>
     <td>
-      <a href="{{ action('TurmaController@editar', $item->id) }}">Editar</a>
-      <a href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a>
+      <a href="{{ action('TurmaController@editar', $item->id) }}">Editar</a><br>
+      <a href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a><br>
+      <a href="{{ url('alunos')}}">Detalhes da turma</a>
     </td>
 </tr>
   @endforeach

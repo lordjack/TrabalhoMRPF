@@ -15,7 +15,7 @@ class CreateTurma extends Migration
     {
         Schema::create('turma', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('curso_id');
+            $table->foreignId('curso_id')->constrained('curso');
             $table->string('nome');
             $table->string('serie');
             $table->string('turno');

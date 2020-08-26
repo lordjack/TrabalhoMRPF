@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePessoa extends Migration
+class CreateAvaliacao extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePessoa extends Migration
      */
     public function up()
     {
-        Schema::create('pessoa', function (Blueprint $table) {
+        Schema::create('avaliacao', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email');
-            $table->string('cpf');
-            $table->string('celular1');
-            $table->string('celular2');
-            $table->string('celular3');
+            $table->ForeignId('aluno_id')->constrained('aluno');
+            $table->date('data');
+            $table->float('competencia1');
+            $table->float('competencia2');
+            $table->float('competencia3');
+            $table->float('nota_final');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreatePessoa extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pessoa');
+        Schema::dropIfExists('avaliacao');
     }
 }

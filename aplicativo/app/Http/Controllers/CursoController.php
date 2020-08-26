@@ -11,12 +11,6 @@ class CursoController extends Controller
   public function listar(){
     $curso = Curso::get();
 
-    foreach ($curso as $item) {
-      $escola = Escola::find($item->escola_id);
-      $item->escola = $escola->nome;
-
-    }
-
     return view('cursos')->with('cursos',$curso);
   }
   public function cadastrar()
@@ -25,18 +19,27 @@ class CursoController extends Controller
   }
   public function salvar(Request $request, $id)
   {
-    if ($id === 0){
+    if ($id == 0){
     $curso = new Curso();
     $curso->nome = $request->input('nome');
-    $curso->escola_id = $request->input('escola_id');
     $curso->data_inicio = $request->input('data_inicio');
     $curso->data_fim = $request->input('data_fim');
 
     $curso->save();
 
     return redirect()->action('CursoController@listar');
-    }
+  }else {
+    $curso = Curso::find($id);
+    $curso->nome = $request->input('nome');
+    $curso->data_inicio = $request->input('data_inicio');
+    $curso->data_fim = $request->input('data_fim');
+
+    $curso->save();
+
+    return redirect()->action('CursoController@listar');
   }
+  }
+
   public function editar($id)
   {
     $curso = Curso::find($id);

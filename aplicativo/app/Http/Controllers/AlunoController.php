@@ -12,18 +12,6 @@ class AlunoController extends Controller
 
     $aluno = Aluno::get();
 
-    foreach ($aluno as $item) {
-
-      $pessoa = Pessoa::find($item->pessoa_id);
-
-      $item->nome = $pessoa->nome;
-      $item->email = $pessoa->email;
-      $item->cpf =$pessoa->cpf;
-      $item->celular1 = $pessoa->celular1;
-      $item->celular2 = $pessoa->celular2;
-      $item->celular3 = $pessoa->celular3;
-    }
-
     return view('alunos')->with('alunos',$aluno);
   }
 
@@ -35,14 +23,33 @@ class AlunoController extends Controller
 
   public function salvar(Request $request, $id)
   {
-    if ($id === 0){
+    if ($id == 0){
     $aluno = new Aluno();
-    $aluno->pessoa_id = $request->input('pessoa_id');
+    $aluno->nome = $request->input('nome');
+    $aluno->numero = $request->input('numero');
+    $aluno->matricula = $request->input('matricula');
+    $aluno->email = $request->input('email');
+    $aluno->contato = $request->input('contato');
+    $aluno->contato_responsaveis = $request->input('contato_responsaveis');
+    $aluno->turma_id = $request->input('turma_id');
 
     $aluno->save();
 
     return redirect()->action('AlunoController@listar');
-    }
+  }else {
+    $aluno = Aluno::find($id);
+    $aluno->nome = $request->input('nome');
+    $aluno->numero = $request->input('numero');
+    $aluno->matricula = $request->input('matricula');
+    $aluno->email = $request->input('email');
+    $aluno->contato = $request->input('contato');
+    $aluno->contato_responsaveis = $request->input('contato_responsaveis');
+    $aluno->turma_id = $request->input('turma_id');
+
+    $aluno->save();
+
+    return redirect()->action('AlunoController@listar');
+  }
 }
 public function editar($id)
 {

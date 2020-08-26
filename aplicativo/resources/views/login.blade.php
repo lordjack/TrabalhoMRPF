@@ -16,7 +16,7 @@
       align-items: center;
       height: 400px;
      ">
-    <form action="{{ url('menu') }}" method="POST" style="padding: 10px" class="border rounded border-dark">
+    <form action="{{ action('TurmaController@listar') }}" method="get" style="padding: 10px" class="border rounded border-dark">
         <h2>Bem vindo, informe suas credenciais</h2>
         <label>Usuário</label>
         <input class="form-group" type="text" name="login"><br>

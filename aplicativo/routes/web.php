@@ -21,6 +21,12 @@ Route::get('/login', function (){
   return view('login');
 });
 
+Route::get('/avaliacao/cadastrar/{id}', 'AvaliacaoController@cadastrar');
+Route::post('/avaliacao/salvar/{id}', 'AvaliacaoController@salvar');
+
+Route::get('/avaliacoes', 'AvaliacaoController@listar');
+Route::get('/avaliacoes/editar/{id}', 'AvaliacaoController@editar');
+Route::get('/avaliacoes/deletar/{id}', 'AvaliacaoController@deletar');
 
 Route::get('/alunos', 'AlunoController@listar');
 Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');

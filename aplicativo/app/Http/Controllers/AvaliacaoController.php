@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Avaliacao;
+use App\Aluno;
 use Illuminate\Http\Request;
 
 class AvaliacaoController extends Controller
@@ -14,10 +16,14 @@ class AvaliacaoController extends Controller
   }
 
 
-  public function cadastrar()
+  public function cadastrar($id)
   {
-    return view('avaliacaoCadastrar');
-  }
+
+    $aluno = Aluno::find($id);
+
+    return view('avaliacao')->with('aluno', $aluno);
+    }
+
 
   public function salvar(Request $request, $id)
   {
@@ -33,7 +39,7 @@ class AvaliacaoController extends Controller
     $avaliacao->save();
 
     return redirect()->action('AvaliacaoController@listar');
-  }else {
+  }else{
     $avaliacao = Avaliacao::find($id);
     $avaliacao->aluno_id = $request->input('aluno_id');
     $avaliacao->data = $request->input('data');

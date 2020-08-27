@@ -6,8 +6,7 @@
     <title>Algoritmo</title>
   </head>
   <body>
-
-    <form class="" action="{{ url('/') }}" method="get">
+    <form class="" action="{{ action('AvaliacaoController@cadastrar', $aluno->id) }}" method="get">
     <table class="table">
       <tr>
         <th>1</th>
@@ -187,5 +186,16 @@ echo "<h2>Nota da competência 3: $competencia3</h2>";
 $nota = ($competencia1 + $competencia2 + $competencia3)/3;
 ?>
     <h2>Nota final: {{ $nota }}</h2>
+    <?php echo "$aluno->nome"; ?>
+    <form  action="{{ action('AvaliacaoController@salvar', 0) }}" method="post">
+      @csrf
+      <input type="hidden" name="competencia1" value="<?php echo "$competencia1"; ?>">
+      <input type="hidden" name="competencia2" value="<?php echo "$competencia2"; ?>">
+      <input type="hidden" name="competencia3" value="<?php echo "$competencia3"; ?>">
+      <input type="hidden" name="nota_final" value="<?php echo "$nota"; ?>">
+      <input type="hidden" name="aluno_id" value="<?php echo "$aluno->id"; ?>">
+      <input type="hidden" name="data" value="<?php echo date("Y/m/d"); ?>">
+      <input type="submit" name="salvar" value="Salvar">
+    </form>
   </body>
 </html>

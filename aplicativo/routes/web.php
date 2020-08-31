@@ -24,11 +24,11 @@ Route::get('/login', function (){
 Route::get('/avaliacao/cadastrar/{id}', 'AvaliacaoController@cadastrar');
 Route::post('/avaliacao/salvar/{id}', 'AvaliacaoController@salvar');
 
-Route::get('/avaliacoes', 'AvaliacaoController@listar');
+Route::get('/avaliacoes/{id}', 'AvaliacaoController@listar');
 Route::get('/avaliacoes/editar/{id}', 'AvaliacaoController@editar');
 Route::get('/avaliacoes/deletar/{id}', 'AvaliacaoController@deletar');
 
-Route::get('/alunos', 'AlunoController@listar');
+Route::get('/alunos/{id}', 'AlunoController@listar');
 Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
 Route::post('/alunos/salvar/{id}', 'AlunoController@salvar');
 Route::get('/alunos/editar/{id}', 'AlunoController@editar');

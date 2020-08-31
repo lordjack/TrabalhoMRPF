@@ -186,9 +186,9 @@ echo "<h2>Nota da competência 3: $competencia3</h2>";
 $nota = ($competencia1 + $competencia2 + $competencia3)/3;
 ?>
     <h2>Nota final: {{ $nota }}</h2>
-    <?php echo "$aluno->nome"; ?>
     <form  action="{{ action('AvaliacaoController@salvar', 0) }}" method="post">
       @csrf
+      <input type="hidden" name="error" value="0">
       <input type="hidden" name="competencia1" value="<?php echo "$competencia1"; ?>">
       <input type="hidden" name="competencia2" value="<?php echo "$competencia2"; ?>">
       <input type="hidden" name="competencia3" value="<?php echo "$competencia3"; ?>">

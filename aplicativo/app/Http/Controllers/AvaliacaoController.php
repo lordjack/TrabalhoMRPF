@@ -8,9 +8,14 @@ use Illuminate\Http\Request;
 
 class AvaliacaoController extends Controller
 {
-  public function listar(){
+  public function listar($id){
+    if ($id != 0) {
+      $avaliacao = Avaliacao::where('aluno_id', $id)->get();
+    }else {
+      $avaliacao = Avaliacao::get();
+    }
 
-    $avaliacao = Avaliacao::get();
+
 
     return view('avaliacoes')->with('avaliacoes',$avaliacao);
   }

@@ -10,6 +10,10 @@ class TurmaController extends Controller
 {
   public function listar(){
     $turma = Turma::get();
+    foreach ($turma as $item) {
+      $curso = Curso::find($item->curso_id);
+      $item->curso = $curso->nome;
+    }
 
     return view('turmas')->with('turmas',$turma);
   }

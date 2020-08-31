@@ -36,7 +36,8 @@
     <td>
       <a href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
       <a href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
-      <a href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar Aluno</a>
+      <a href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a>
+      <a href="{{ action('AvaliacaoController@listar', $item->id) }}">Notas</a>
     </td>
 </tr>
   @endforeach

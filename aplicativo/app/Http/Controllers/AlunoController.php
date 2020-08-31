@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
-use App\Pessoa;
+use App\Turma;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
-  public function listar(){
+  public function listar($id){
 
-    $aluno = Aluno::get();
+    $aluno = Aluno::where('turma_id', $id)->get();
+
+    foreach ($aluno as $item) {
+        $turma = Turma::find($item->turma_id);
+        $item->turma = $turma->nome;
+
+    }
+
 
     return view('alunos')->with('alunos',$aluno);
   }

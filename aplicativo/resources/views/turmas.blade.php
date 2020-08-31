@@ -29,7 +29,7 @@
     <td>
       <a href="{{ action('TurmaController@editar', $item->id) }}">Editar</a><br>
       <a href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a><br>
-      <a href="{{ url('alunos')}}">Detalhes da turma</a>
+      <a href="{{ action('AlunoController@listar', $item->id) }}">Detalhes da turma</a>
     </td>
 </tr>
   @endforeach

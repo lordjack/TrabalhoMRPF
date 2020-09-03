@@ -29,7 +29,7 @@ Route::get('/avaliacoes/editar/{id}', 'AvaliacaoController@editar');
 Route::get('/avaliacoes/deletar/{id}', 'AvaliacaoController@deletar');
 
 Route::get('/alunos/{id}', 'AlunoController@listar');
-Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
+Route::get('/alunos/cadastrar/{id}', 'AlunoController@cadastrar');
 Route::post('/alunos/salvar/{id}', 'AlunoController@salvar');
 Route::get('/alunos/editar/{id}', 'AlunoController@editar');
 Route::get('/alunos/deletar/{id}', 'AlunoController@deletar');

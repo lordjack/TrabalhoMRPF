@@ -3,16 +3,20 @@
 @section('titulo', 'Cadastrar Turmas')
 
 @section('form')
-    <form class="" action="{{ action('TurmaController@salvar', $turmas->id) }}" method="post">
+    <form class="form-group" action="{{ action('TurmaController@salvar', $turmas->id) }}" method="post">
       @csrf
       <label>Nome</label><br>
-      <input type="text" name="nome" value="{{turmas->nome}}"><br>
+      <input class="form-control" type="text" name="nome" value="{{$turmas->nome}}"><br>
       <label>Curso</label><br>
-      <input type="text" name="curso_id" value="{{turmas->curso_id}}"><br>
+      <select class="form-control" name="curso_id">
+        @foreach($cursos as $item)
+        <option value="{{$item->id}}"><?php echo $item->nome ?></option>
+        @endforeach
+      </select><br>
       <label>Turno</label><br>
-      <input type="text" name="turno" value="{{turmas->turno}}"><br>
+      <input class="form-control" type="text" name="turno" value="{{$turmas->turno}}"><br>
       <label>Série</label><br>
-      <input type="text" name="serie" value="{{turmas->serie}}"><br>
+      <input class="form-control" type="text" name="serie" value="{{$turmas->serie}}"><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
 

@@ -19,7 +19,10 @@ class TurmaController extends Controller
   }
   public function cadastrar()
   {
-    return view('turmaCadastrar');
+    $cursos = Curso::get();
+
+
+    return view('turmaCadastrar')->with('cursos', $cursos);
   }
   public function salvar(Request $request, $id)
   {
@@ -48,8 +51,10 @@ class TurmaController extends Controller
 public function editar($id)
 {
   $turma = Turma::find($id);
+  $cursos = Curso::get();
 
-  return view('turmaEditar')->with('turmas',$turma);
+
+  return view('turmaEditar')->with('turmas',$turma)->with('cursos', $cursos);
 }
 
 public function deletar($id)

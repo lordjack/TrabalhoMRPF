@@ -5,6 +5,7 @@
 
 @section('cabecalho')
   <h2>Turmas Cadastradas:</h2>
+  <a href="{{ action('TurmaController@cadastrar') }}">Cadastrar Turma</a>
 @stop
 
 
@@ -29,7 +30,7 @@
     <td>
       <a href="{{ action('TurmaController@editar', $item->id) }}">Editar</a><br>
       <a href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a><br>
-      <a href="{{ action('AlunoController@listar', $item->id) }}">Detalhes da turma</a>
+      <a href="{{ action('AlunoController@listar', $item->id) }}">Detalhes</a>
     </td>
 </tr>
   @endforeach

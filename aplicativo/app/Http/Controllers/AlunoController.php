@@ -17,15 +17,15 @@ class AlunoController extends Controller
         $item->turma = $turma->nome;
 
     }
-
+    $aluno->turma_id = $id;
 
     return view('alunos')->with('alunos',$aluno);
   }
 
 
-  public function cadastrar()
+  public function cadastrar($turma_id)
   {
-    return view('alunoCadastrar');
+    return view('alunoCadastrar')->with('turma', $turma_id);
   }
 
   public function salvar(Request $request, $id)

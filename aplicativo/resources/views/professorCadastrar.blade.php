@@ -3,23 +3,23 @@
 @section('titulo', 'Cadastrar Professores')
 
 @section('form')
-
-    <form class="" action="{{ action('ProfessorController@salvar', 0) }}" method="post">
+    <form class="form-group" action="{{ action('ProfessorController@salvar', 0) }}" method="post">
       @csrf
       <label>Nome</label><br>
-      <input type="text" name="nome"><br>
+      <input class="form-control" type="text" name="nome" required><br>
       <label>Email</label><br>
-      <input type="text" name="email"><br>
+      <input class="form-control" type="text" name="email" required><br>
       <label>Contato</label><br>
-      <input type="text" name="contato"><br>
+      <input class="form-control" type="text" name="contato" required><br>
       <label>Área</label><br>
-      <input type="text" name="area"><br>
+      <input class="form-control" type="text" name="area" required><br>
       <label>Titulação</label><br>
-      <input type="text" name="titulacao"><br>
+      <input class="form-control" type="text" name="titulacao" required><br>
       <label>Formação</label><br>
-      <input type="text" name="formacao"><br>
+      <input class="form-control" type="text" name="formacao" required><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
+      <a href="{{ url()->previous()}}">Voltar</a>
 
 
 @stop

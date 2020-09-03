@@ -13,7 +13,7 @@
     <p>{Descrição do Projeto}</p>
 
   <a class="btn btn-info" href="{{ url('login')}}" type="button">Entrar no sistema</a>
-  <a class="btn btn-info" href="{{ url('cadastro')}}" type="button">Criar Conta Conta</a>
+  <a class="btn btn-info" href="{{ url('cadastro')}}" type="button">Criar Conta</a>
     </div>
   </body>
 </html>

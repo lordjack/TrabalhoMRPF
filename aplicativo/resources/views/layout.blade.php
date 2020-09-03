@@ -10,6 +10,7 @@
       <div style="display: 'inline'">
       <a href="{{ url('/turmas')}}">Turmas</a>
       <a href="{{ url('/professores')}}">Professores</a>
+      <a href="{{ url('/cursos')}}">Cursos</a>
       </div>
       <div class="">
         @yield('cabecalho')

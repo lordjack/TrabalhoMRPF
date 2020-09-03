@@ -5,6 +5,7 @@
 
 @section('cabecalho')
   <h2>Cursos Cadastrados:</h2>
+  <a href="{{ action('CursoController@cadastrar') }}">Cadastrar Curso</a>
 @stop
 
 

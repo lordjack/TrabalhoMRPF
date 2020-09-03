@@ -5,6 +5,7 @@
 
 @section('cabecalho')
   <h2>Alunos Cadastrados:</h2>
+  <a href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
 @stop
 
 

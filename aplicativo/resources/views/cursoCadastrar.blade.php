@@ -3,16 +3,15 @@
 @section('titulo', 'Cadastrar Cursos')
 
 @section('form')
-
-      <form class="" action="{{ action('CursoController@salvar', 0) }}" method="post">
+      <form class="form-group" action="{{ action('CursoController@salvar', 0) }}" method="post">
         @csrf
       <label>Nome</label><br>
-      <input type="text" name="nome"><br>
+      <input class="form-control" type="text" name="nome" required><br>
       <label>Data de inicio</label><br>
-      <input type="text" name="data_inicio"><br>
+      <input class="form-control" type="date" name="data_inicio" required><br>
       <label>Data de término</label><br>
-      <input type="text" name="data_fim"><br>
+      <input class="form-control" type="date" name="data_fim" required><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
-
+      <a href="{{ url()->previous()}}">Voltar</a>
 @stop

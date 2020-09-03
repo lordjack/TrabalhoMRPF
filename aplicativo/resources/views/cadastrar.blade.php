@@ -7,6 +7,10 @@
   </head>
   <body>
     <div class="container">
+      <div style="display: 'inline'">
+      <a href="{{ url('/turmas')}}">Turmas</a>
+      <a href="{{ url('/professores')}}">Professores</a>
+      </div>
       @yield('form')
   </div>
   </body>

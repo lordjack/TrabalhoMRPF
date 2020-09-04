@@ -30,6 +30,7 @@ class AlunoController extends Controller
 
   public function salvar(Request $request, $id)
   {
+
     if ($id == 0){
     $aluno = new Aluno();
     $aluno->nome = $request->input('nome');
@@ -41,8 +42,9 @@ class AlunoController extends Controller
     $aluno->turma_id = $request->input('turma_id');
 
     $aluno->save();
+    $turma = $aluno->turma_id;
 
-    return redirect()->action('AlunoController@listar');
+    return redirect()->action('AlunoController@listar', $turma);
   }else {
     $aluno = Aluno::find($id);
     $aluno->nome = $request->input('nome');
@@ -54,8 +56,9 @@ class AlunoController extends Controller
     $aluno->turma_id = $request->input('turma_id');
 
     $aluno->save();
+    $turma = $aluno->turma_id;
 
-    return redirect()->action('AlunoController@listar');
+    return redirect()->action('AlunoController@listar', $turma);
   }
 }
 public function editar($id)
@@ -72,9 +75,11 @@ public function deletar($id)
   if (empty($aluno)) {
     return '<h2>Houve um problema ao consultar o ID informado</h2>';
   }
+  $turma = $aluno->turma_id;
   $aluno->delete();
 
-  return redirect()->action('AlunoController@listar');
+
+  return redirect()->action('AlunoController@listar', $turma);
 }
 
 }

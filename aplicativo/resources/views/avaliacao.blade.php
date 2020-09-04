@@ -18,42 +18,42 @@
       </tr>
       <tr>
         <th> <select class="" name="1">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="2">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="3">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="4">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="5">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="6">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
@@ -72,42 +72,42 @@
       <tr>
 
         <th> <select class="" name="7">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="8">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="9">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="10">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="11">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
         <th> <select class="" name="12">
-          <option value="null">Não se aplica</option>
+          <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
@@ -118,11 +118,21 @@
     <input type="submit" name="confirmar" value="Confirmar">
     </form>
     <?php
-    $competencia1 = 0;
-    $competencia2 = 0;
-    $competencia3 = 0;
-    $notas;
-
+    $competencia1 = null;
+    $competencia2 = null;
+    $competencia3 = null;
+    $notas[1] = null;
+    $notas[2] = null;
+    $notas[3] = null;
+    $notas[4] = null;
+    $notas[5] = null;
+    $notas[6] = null;
+    $notas[7] = null;
+    $notas[8] = null;
+    $notas[9] = null;
+    $notas[10] = null;
+    $notas[11] = null;
+    $notas[12] = null;
      if (!empty($_GET['confirmar'])) {
 
       $notas = $_GET;
@@ -189,6 +199,18 @@ $nota = ($competencia1 + $competencia2 + $competencia3)/3;
     <form  action="{{ action('AvaliacaoController@salvar', 0) }}" method="post">
       @csrf
       <input type="hidden" name="error" value="0">
+      <input type="hidden" name="habilidade1" value="<?php echo "$notas[1]"; ?>">
+      <input type="hidden" name="habilidade2" value="<?php echo "$notas[2]"; ?>">
+      <input type="hidden" name="habilidade3" value="<?php echo "$notas[3]"; ?>">
+      <input type="hidden" name="habilidade4" value="<?php echo "$notas[4]"; ?>">
+      <input type="hidden" name="habilidade5" value="<?php echo "$notas[5]"; ?>">
+      <input type="hidden" name="habilidade6" value="<?php echo "$notas[6]"; ?>">
+      <input type="hidden" name="habilidade7" value="<?php echo "$notas[7]"; ?>">
+      <input type="hidden" name="habilidade8" value="<?php echo "$notas[8]"; ?>">
+      <input type="hidden" name="habilidade9" value="<?php echo "$notas[9]"; ?>">
+      <input type="hidden" name="habilidade10" value="<?php echo "$notas[10]"; ?>">
+      <input type="hidden" name="habilidade11" value="<?php echo "$notas[11]"; ?>">
+      <input type="hidden" name="habilidade12" value="<?php echo "$notas[12]"; ?>">
       <input type="hidden" name="competencia1" value="<?php echo "$competencia1"; ?>">
       <input type="hidden" name="competencia2" value="<?php echo "$competencia2"; ?>">
       <input type="hidden" name="competencia3" value="<?php echo "$competencia3"; ?>">

@@ -7,10 +7,10 @@
     <title>Entrar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
-<h1 class="text-white bg-dark" style="display: flex;
-  justify-content: center;
-  align-items: center;">Entrar</h1>
 <body>
+  <h1 style="display: flex;
+    justify-content: center;
+    align-items: center;">Entrar</h1>
     <div style="display: flex;
       justify-content: center;
       align-items: center;
@@ -22,9 +22,10 @@
         <input class="form-group" type="text" name="login"><br>
         <label>Senha</label>
         <input class="form-group" type="password" name="senha"><br>
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Entrar"> <a href="{{ url()->previous() }}">Voltar</a>
     </form>
   </div>
+
 </body>
 
 </html>

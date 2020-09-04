@@ -10,7 +10,7 @@
       <label>Curso</label><br>
       <select class="form-control" name="curso_id">
         @foreach($cursos as $item)
-        <option value="$item->id"><?php echo $item->nome ?></option>
+        <option value="{{$item->id}}"><?php echo $item->nome ?></option>
         @endforeach
       </select><br>
       <label>Turno</label><br>

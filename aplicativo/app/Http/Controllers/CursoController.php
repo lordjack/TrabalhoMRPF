@@ -22,8 +22,7 @@ class CursoController extends Controller
     if ($id == 0){
     $curso = new Curso();
     $curso->nome = $request->input('nome');
-    $curso->data_inicio = $request->input('data_inicio');
-    $curso->data_fim = $request->input('data_fim');
+
 
     $curso->save();
 
@@ -31,8 +30,7 @@ class CursoController extends Controller
   }else {
     $curso = Curso::find($id);
     $curso->nome = $request->input('nome');
-    $curso->data_inicio = $request->input('data_inicio');
-    $curso->data_fim = $request->input('data_fim');
+
 
     $curso->save();
 

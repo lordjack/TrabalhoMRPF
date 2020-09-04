@@ -9,7 +9,6 @@
 
 
 @section('listagem')
-
 <table class='table'>
 <tr>
   <th>ID</th>

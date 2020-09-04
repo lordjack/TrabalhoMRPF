@@ -14,8 +14,6 @@
 <tr>
   <th>Id</th>
   <th>Nome</th>
-  <th>Data de início</th>
-  <th>Data de término</th>
   <th>Ações</th>
 </tr>
 
@@ -23,8 +21,6 @@
 <tr>
     <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
-    <td>{{$item->data_inicio}}</td>
-    <td>{{$item->data_fim}}</td>
     <td>
       <a href="{{ action('CursoController@editar', $item->id) }}">Editar</a>
       <a href="{{ action('CursoController@deletar', $item->id) }}">Excluir</a>

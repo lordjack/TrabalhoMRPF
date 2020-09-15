@@ -121,7 +121,7 @@ $t20 = array(
     <td>{{$item->serie}}</td>
     <td>
       <a href="{{ action('TurmaController@editar', $item->id) }}">Editar</a><br>
-      <a href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a><br>
+      <a onclick=" return confirm('Remover Turma?');" href="{{ action('TurmaController@deletar', $item->id) }}">Excluir</a><br>
       <a href="{{ action('AlunoController@listar', $item->id) }}">Detalhes</a>
     </td>
 </tr>

@@ -236,7 +236,7 @@ tempo.render();
 
     <td>
       <a href="{{ action('AvaliacaoController@editar', $item->id) }}">Editar</a>
-      <a href="{{ action('AvaliacaoController@deletar', $item->id) }}">Excluir</a>
+      <a onclick=" return confirm('Remover Avaliação?');" href="{{ action('AvaliacaoController@deletar', $item->id) }}">Excluir</a>
 
     </td>
 </tr>

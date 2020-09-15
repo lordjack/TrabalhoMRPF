@@ -23,7 +23,7 @@
     <td>{{$item->nome}}</td>
     <td>
       <a href="{{ action('CursoController@editar', $item->id) }}">Editar</a>
-      <a href="{{ action('CursoController@deletar', $item->id) }}">Excluir</a>
+      <a onclick=" return confirm('Remover curso?');" href="{{ action('CursoController@deletar', $item->id) }}">Excluir</a>
     </td>
 </tr>
   @endforeach

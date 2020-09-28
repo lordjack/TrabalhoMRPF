@@ -730,8 +730,8 @@ chart12.render();
 @stop
 
 @section('cabecalho')
-  <h2>Alunos Cadastrados:</h2>
-  <a href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
+  <h3>Alunos Cadastrados:</h3>
+  <a class="btn btn-outline-info" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
 @stop
 
 
@@ -761,10 +761,10 @@ chart12.render();
     <td>{{$item->contato}}</td>
     <td>{{$item->contato_responsaveis}}</td>
     <td>
-      <a href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
-      <a onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
-      <a href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a>
-      <a href="{{ action('AvaliacaoController@listar', $item->id) }}">Notas</a>
+      <a class="btn btn-primary btn-sm" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
+      <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
+      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a><br>
+      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver notas</a>
     </td>
 </tr>
   @endforeach

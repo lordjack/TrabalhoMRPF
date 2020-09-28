@@ -6,13 +6,25 @@
     <title>@yield('titulo')</title>
     @yield('graficos')
   </head>
-  <body>
-    <div class="container">
-      <div style="display: 'inline'">
-      <a href="{{ url('/turmas')}}">Turmas</a>
-      <a href="{{ url('/professores')}}">Professores</a>
-      <a href="{{ url('/cursos')}}">Cursos</a>
+  <body class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:inline">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="navbar-item active">
+      <a  class="nav-link" href="{{ url('/turmas')}}">Turmas</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url('/professores')}}">Professores</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url('/cursos')}}">Cursos</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url()->previous() }}">Voltar</a>
+          </li>
+        </ul>
       </div>
+    </nav>
       <div class="">
         @yield('cabecalho')
       </div>

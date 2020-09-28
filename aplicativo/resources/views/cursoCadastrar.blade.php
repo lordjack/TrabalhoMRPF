@@ -9,5 +9,5 @@
       <input class="form-control" type="text" name="nome" required><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
-      <a href="{{ url()->previous()}}">Voltar</a>
+      <a class="btn btn-primary" href="{{ url()->previous()}}">Voltar</a>
 @stop

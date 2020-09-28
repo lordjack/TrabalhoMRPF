@@ -4,8 +4,8 @@
 
 
 @section('cabecalho')
-  <h2>Cursos Cadastrados:</h2>
-  <a href="{{ action('CursoController@cadastrar') }}">Cadastrar Curso</a>
+  <h3>Cursos Cadastrados:</h3>
+  <a class="btn btn-outline-info" href="{{ action('CursoController@cadastrar') }}">Cadastrar Curso</a>
 @stop
 
 
@@ -22,8 +22,8 @@
     <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
     <td>
-      <a href="{{ action('CursoController@editar', $item->id) }}">Editar</a>
-      <a onclick=" return confirm('Remover curso?');" href="{{ action('CursoController@deletar', $item->id) }}">Excluir</a>
+      <a class="btn btn-primary btn-sm" href="{{ action('CursoController@editar', $item->id) }}">Editar</a>
+      <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover curso?');" href="{{ action('CursoController@deletar', $item->id) }}">Excluir</a>
     </td>
 </tr>
   @endforeach

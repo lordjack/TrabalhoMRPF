@@ -4,22 +4,22 @@
 
 @section('form')
 
-    <form class="" action="{{ action('ProfessorController@salvar', $professores->id) }}" method="post">
+    <form class="form-group" action="{{ action('ProfessorController@salvar', $professores->id) }}" method="post">
       @csrf
       <label>Nome</label><br>
-      <input type="text" name="nome" value="{{$professores->nome}}"><br>
+      <input class="form-control" type="text" name="nome" value="{{$professores->nome}}"><br>
       <label>Email</label><br>
-      <input type="text" name="email" value="{{$professores->email}}"><br>
+      <input class="form-control" type="email" name="email" value="{{$professores->email}}"><br>
       <label>Contato</label><br>
-      <input type="text" name="contato" value="{{$professores->contato}}"><br>
+      <input class="form-control" type="text" name="contato" value="{{$professores->contato}}"><br>
       <label>Área</label><br>
-      <input type="text" name="area" value="{{$professores->area}}"><br>
+      <input class="form-control" type="text" name="area" value="{{$professores->area}}"><br>
       <label>Titulação</label><br>
-      <input type="text" name="titulacao" value="{{$professores->titulacao}}"><br>
+      <input class="form-control" type="text" name="titulacao" value="{{$professores->titulacao}}"><br>
       <label>Formação</label><br>
-      <input type="text" name="formacao" value="{{$professores->formacao}}"><br>
+      <input class="form-control" type="text" name="formacao" value="{{$professores->formacao}}"><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
-
+      <a class="btn btn-primary" href="{{ url()->previous()}}">Voltar</a>
 
 @stop

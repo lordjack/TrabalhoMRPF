@@ -64,8 +64,9 @@ class AlunoController extends Controller
 public function editar($id)
 {
   $aluno = Aluno::find($id);
+  $turma = Turma::get();
 
-  return view('alunoEditar')->with('alunos',$aluno);
+  return view('alunoEditar')->with('alunos',$aluno)->with('turmas', $turma);
 }
 
 public function deletar($id)

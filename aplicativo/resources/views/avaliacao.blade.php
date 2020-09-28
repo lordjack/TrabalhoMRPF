@@ -3,56 +3,113 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <meta charset="utf-8">
-    <title>Algoritmo</title>
+    <title>Avaliação</title>
   </head>
-  <body>
-    <form class="" action="{{ action('AvaliacaoController@cadastrar', $aluno->id) }}" method="get">
-    <table class="table">
-      <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
+  <body class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:inline">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="navbar-item active">
+      <a  class="nav-link" href="{{ url('/turmas')}}">Turmas</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url('/professores')}}">Professores</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url('/cursos')}}">Cursos</a>
+          </li>
+          <li class="navbar-item active">
+      <a class="nav-link" href="{{ url()->previous() }}">Voltar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <form class="form-group" action="{{ action('AvaliacaoController@cadastrar', $aluno->id) }}" method="get" style="text-align:center">
+    <table class="table" style="width:100%">
+      <tr class=" table-primary" >
+        <th colspan="5">
+      <h3>Competencia 1</h3>
+    </th>
       </tr>
       <tr>
-        <th> <select class="" name="1">
+        <th>Habilidade 1</th>
+        <th>Habilidade 2</th>
+        <th>Habilidade 3</th>
+        <th>Habilidade 4</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> <select class="form-control" name="1">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="2">
+        <th> <select class="form-control" name="2">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="3">
+        <th> <select class="form-control" name="3">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="4">
+        <th> <select class="form-control" name="4">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="5">
+        <tr class=" table-primary">
+          <th colspan="5">
+          <h3 >Competencia 2</h3>
+          </th>
+        </tr>
+        <tr>
+
+
+        <th>Habilidade 5</th>
+        <th>Habilidade 6</th>
+        <th>Habilidade 7</th>
+        <th>Habilidade 8</th>
+        <th>Habilidade 9</th>
+        </tr>
+        <th> <select class="form-control" name="5">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="6">
+        <th> <select class="form-control" name="6">
+          <option value="">Não se aplica</option>
+          <option value="0">Não fez</option>
+          <option value="3">Insuficiente</option>
+          <option value="7">Adequado</option>
+          <option value="10">Excelente</option>
+        </select> </th>
+        <th> <select class="form-control" name="7">
+          <option value="">Não se aplica</option>
+          <option value="0">Não fez</option>
+          <option value="3">Insuficiente</option>
+          <option value="7">Adequado</option>
+          <option value="10">Excelente</option>
+        </select> </th>
+        <th> <select class="form-control" name="8">
+          <option value="">Não se aplica</option>
+          <option value="0">Não fez</option>
+          <option value="3">Insuficiente</option>
+          <option value="7">Adequado</option>
+          <option value="10">Excelente</option>
+        </select> </th>
+        <th> <select class="form-control" name="9">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
@@ -61,52 +118,39 @@
         </select> </th>
       </tr>
       <tr>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
+      </tr>
+      <tr class="table-primary">
+        <th colspan="5">
+        <h3>Competencia 3</h3>
         </th>
       </tr>
       <tr>
 
-        <th> <select class="" name="7">
+        <th>Habilidade 10</th>
+        <th>Habilidade 11</th>
+        <th>Habilidade 12</th>
+        <th></th>
+        <th></th>
+        </th>
+      </tr>
+      <tr>
+
+
+        <th> <select class="form-control" name="10">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="8">
+        <th> <select class="form-control" name="11">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
-        <th> <select class="" name="9">
-          <option value="">Não se aplica</option>
-          <option value="0">Não fez</option>
-          <option value="3">Insuficiente</option>
-          <option value="7">Adequado</option>
-          <option value="10">Excelente</option>
-        </select> </th>
-        <th> <select class="" name="10">
-          <option value="">Não se aplica</option>
-          <option value="0">Não fez</option>
-          <option value="3">Insuficiente</option>
-          <option value="7">Adequado</option>
-          <option value="10">Excelente</option>
-        </select> </th>
-        <th> <select class="" name="11">
-          <option value="">Não se aplica</option>
-          <option value="0">Não fez</option>
-          <option value="3">Insuficiente</option>
-          <option value="7">Adequado</option>
-          <option value="10">Excelente</option>
-        </select> </th>
-        <th> <select class="" name="12">
+        <th> <select class="form-control" name="12">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
           <option value="3">Insuficiente</option>
@@ -115,8 +159,9 @@
         </select> </th>
       </tr>
     </table>
-    <input type="submit" name="confirmar" value="Confirmar">
+    <input type="submit" name="confirmar" value="Calcular Notas" class="btn btn-primary" >
     </form>
+    <hr>
     <?php
     $competencia1 = null;
     $competencia2 = null;
@@ -189,14 +234,17 @@
         }
       }
     }
-echo "<h2>Nota da competência 1: $competencia1</h2>";
-echo "<h2>Nota da competência 2: $competencia2</h2>";
-echo "<h2>Nota da competência 3: $competencia3</h2>";
+echo "<div style='text-align:center'>";
+echo "<br>";
+echo "<h3>Nota da competência 1: $competencia1</h3>";
+echo "<h3>Nota da competência 2: $competencia2</h3>";
+echo "<h3>Nota da competência 3: $competencia3</h3>";
+echo "</div>";
 
 $nota = ($competencia1 + $competencia2 + $competencia3)/3;
 ?>
-    <h2>Nota final: {{ $nota }}</h2>
-    <form  action="{{ action('AvaliacaoController@salvar', 0) }}" method="post">
+    <h2 style='text-align:center'>Nota final: {{ $nota }}</h2>
+    <form style='text-align:center' action="{{ action('AvaliacaoController@salvar', 0) }}" method="post">
       @csrf
       <input type="hidden" name="error" value="0">
       <input type="hidden" name="habilidade1" value="<?php echo "$notas[1]"; ?>">
@@ -217,7 +265,8 @@ $nota = ($competencia1 + $competencia2 + $competencia3)/3;
       <input type="hidden" name="nota_final" value="<?php echo "$nota"; ?>">
       <input type="hidden" name="aluno_id" value="<?php echo "$aluno->id"; ?>">
       <input type="hidden" name="data" value="<?php echo date("Y/m/d"); ?>">
-      <input type="submit" name="salvar" value="Salvar">
+      <input type="submit" name="salvar" value="Salvar" class="btn btn-primary">
     </form>
+    <footer style="margin-bottom:100px"></footer>
   </body>
 </html>

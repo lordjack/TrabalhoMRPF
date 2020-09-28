@@ -4,8 +4,8 @@
 
 
 @section('cabecalho')
-  <h2>Professores Cadastrados:</h2>
-  <a href="{{ action('ProfessorController@cadastrar') }}">Cadastrar Professor</a>
+  <h3>Professores Cadastrados:</h3>
+  <a class="btn btn-outline-info" href="{{ action('ProfessorController@cadastrar') }}">Cadastrar Professor</a>
 @stop
 
 
@@ -32,8 +32,8 @@
     <td>{{$item->titulacao}}</td>
     <td>{{$item->formacao}}</td>
     <td>
-      <a href="{{ action('ProfessorController@editar', $item->id) }}">Editar</a>
-      <a onclick=" return confirm('Remover Professor?');" href="{{ action('ProfessorController@deletar', $item->id) }}">Excluir</a>
+      <a class="btn btn-primary btn-sm" href="{{ action('ProfessorController@editar', $item->id) }}">Editar</a>
+      <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover Professor?');" href="{{ action('ProfessorController@deletar', $item->id) }}">Excluir</a>
     </td>
 </tr>
   @endforeach

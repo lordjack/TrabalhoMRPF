@@ -8,7 +8,7 @@
       <label>Nome</label><br>
       <input class="form-control" type="text" name="nome" required><br>
       <label>Email</label><br>
-      <input class="form-control" type="text" name="email" required><br>
+      <input class="form-control" type="email" name="email" required><br>
       <label>Contato</label><br>
       <input class="form-control" type="text" name="contato" required><br>
       <label>Área</label><br>
@@ -19,7 +19,7 @@
       <input class="form-control" type="text" name="formacao" required><br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
-      <a href="{{ url()->previous()}}">Voltar</a>
+      <a class="btn btn-primary" href="{{ url()->previous()}}">Voltar</a>
 
 
 @stop

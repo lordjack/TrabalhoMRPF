@@ -85,12 +85,6 @@ class AvaliacaoController extends Controller
 
   }
 }
-public function editar($id)
-{
-  $avaliacao = Avaliacao::find($id);
-
-  return view('avaliacaoEditar')->with('avaliacoes',$avaliacao);
-}
 
 public function deletar($id)
 {

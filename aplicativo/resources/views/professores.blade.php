@@ -5,7 +5,7 @@
 
 @section('cabecalho')
   <h3>Professores Cadastrados:</h3>
-  <a class="btn btn-outline-info" href="{{ action('ProfessorController@cadastrar') }}">Cadastrar Professor</a>
+  <a class="btn btn-outline-primary" href="{{ action('ProfessorController@cadastrar') }}">Cadastrar Professor</a>
 @stop
 
 

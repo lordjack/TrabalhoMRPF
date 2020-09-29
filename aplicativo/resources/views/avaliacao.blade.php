@@ -5,25 +5,27 @@
     <meta charset="utf-8">
     <title>Avaliação</title>
   </head>
-  <body class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:inline">
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
+  <body
+  >
+    <div class="bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light" style="display:inline">
+        <ul class="navbar-nav ml-5">
           <li class="navbar-item active">
-      <a  class="nav-link" href="{{ url('/turmas')}}">Turmas</a>
+      <a  class="nav-link  text-white" href="{{ url('/turmas')}}">Turmas</a>
           </li>
           <li class="navbar-item active">
-      <a class="nav-link" href="{{ url('/professores')}}">Professores</a>
+      <a class="nav-link  text-white" href="{{ url('/professores')}}">Professores</a>
           </li>
           <li class="navbar-item active">
-      <a class="nav-link" href="{{ url('/cursos')}}">Cursos</a>
+      <a class="nav-link  text-white" href="{{ url('/cursos')}}">Cursos</a>
           </li>
           <li class="navbar-item active">
-      <a class="nav-link" href="{{ url()->previous() }}">Voltar</a>
+      <a class="nav-link  text-white" href="{{ url()->previous() }}">Voltar</a>
           </li>
         </ul>
-      </div>
     </nav>
+    </div>
+    <div class="container mt-4">
     <form class="form-group" action="{{ action('AvaliacaoController@cadastrar', $aluno->id) }}" method="get" style="text-align:center">
     <table class="table" style="width:100%">
       <tr class=" table-primary" >
@@ -36,7 +38,8 @@
         <th>Habilidade 2</th>
         <th>Habilidade 3</th>
         <th>Habilidade 4</th>
-        <th></th>
+        <th>Habilidade 5</th>
+
       </tr>
       <tr>
         <th> <select class="form-control" name="1">
@@ -67,6 +70,13 @@
           <option value="7">Adequado</option>
           <option value="10">Excelente</option>
         </select> </th>
+        <th> <select class="form-control" name="5">
+          <option value="">Não se aplica</option>
+          <option value="0">Não fez</option>
+          <option value="3">Insuficiente</option>
+          <option value="7">Adequado</option>
+          <option value="10">Excelente</option>
+        </select> </th>
         <tr class=" table-primary">
           <th colspan="5">
           <h3 >Competencia 2</h3>
@@ -75,19 +85,14 @@
         <tr>
 
 
-        <th>Habilidade 5</th>
+
         <th>Habilidade 6</th>
         <th>Habilidade 7</th>
         <th>Habilidade 8</th>
         <th>Habilidade 9</th>
+        <th></th>
         </tr>
-        <th> <select class="form-control" name="5">
-          <option value="">Não se aplica</option>
-          <option value="0">Não fez</option>
-          <option value="3">Insuficiente</option>
-          <option value="7">Adequado</option>
-          <option value="10">Excelente</option>
-        </select> </th>
+
         <th> <select class="form-control" name="6">
           <option value="">Não se aplica</option>
           <option value="0">Não fez</option>
@@ -181,9 +186,9 @@
      if (!empty($_GET['confirmar'])) {
 
       $notas = $_GET;
-      $delineamento = array_slice($notas, 0, 5, true);
-      $resolucao = array_slice($notas, 5, 4, true);
-      $analise = array_slice($notas, 9, 3, true);
+      $delineamento = array_slice($notas, 0, 5);
+      $resolucao = array_slice($notas, 5, 4);
+      $analise = array_slice($notas, 9, 3);
 
       $d =0;
       foreach ($delineamento as $item => $value) {
@@ -268,5 +273,6 @@ $nota = ($competencia1 + $competencia2 + $competencia3)/3;
       <input type="submit" name="salvar" value="Salvar" class="btn btn-primary">
     </form>
     <footer style="margin-bottom:100px"></footer>
+        </div>
   </body>
 </html>

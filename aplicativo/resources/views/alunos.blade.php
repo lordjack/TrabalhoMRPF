@@ -7,7 +7,7 @@ $adequado = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
 $excelente = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
 
 foreach ($alunos as $item) {
-  $avaliacao = Avaliacao::where('aluno_id', $item->id)->latest()->get();
+  $avaliacao = Avaliacao::where('aluno_id', $item->id)->get();
   $habilidade1 = NULL;
   $habilidade2 = NULL;
   $habilidade3 = NULL;
@@ -33,214 +33,216 @@ foreach ($alunos as $item) {
   $divisor11 = 0;
   $divisor12 = 0;
 
+
     foreach ($avaliacao as $prova) {
-      if (!empty($prova->habilidade1)) {
+      if (is_numeric($prova->habilidade1)) {
         $habilidade1 += $prova->habilidade1;
         $divisor1++;
         $habilidade1 = $habilidade1/$divisor1;
       }
-    }
 
-  if ($habilidade1 >= 0 && $habilidade1 < 3 && $habilidade1 != NULL) {
+
+  if ($habilidade1 >= 0 && $habilidade1 < 3 && is_numeric($habilidade1)) {
     $nfez[1]++;
-  } elseif ($habilidade1 >= 3 && $habilidade1 < 7 && $habilidade1 != NULL) {
+  } elseif ($habilidade1 >= 3 && $habilidade1 < 7 && is_numeric($habilidade1)) {
     $insuficiente[1]++;
-  } elseif ($habilidade1 >= 7 && $habilidade1 < 10 && $habilidade1 != NULL) {
+  } elseif ($habilidade1 >= 7 && $habilidade1 < 10 && is_numeric($habilidade1)) {
     $adequado[1]++;
-  }elseif ($habilidade1 == 10 && $habilidade1 != NULL){
+  }elseif ($habilidade1 == 10 && is_numeric($habilidade1)){
     $excelente[1]++;
   }
 
 
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade2)) {
+
+    if (is_numeric($prova->habilidade2)) {
       $habilidade2 += $prova->habilidade2;
       $divisor2++;
       $habilidade2 = $habilidade2/$divisor2;
     }
-  }
 
-  if ($habilidade2 >= 0 && $habilidade2 < 3 && $habilidade2 != NULL) {
+
+  if ($habilidade2 >= 0 && $habilidade2 < 3 && is_numeric($habilidade2)) {
   $nfez[2]++;
-  } elseif ($habilidade2 >= 3 && $habilidade2 < 7 && $habilidade2 != NULL) {
+  } elseif ($habilidade2 >= 3 && $habilidade2 < 7 && is_numeric($habilidade2)) {
   $insuficiente[2]++;
-} elseif ($habilidade2 >= 7 && $habilidade2 < 10 && $habilidade2 != NULL) {
+} elseif ($habilidade2 >= 7 && $habilidade2 < 10 && is_numeric($habilidade2)) {
   $adequado[2]++;
-}elseif ($habilidade2 == 10 && $habilidade2 != NULL) {
+}elseif ($habilidade2 == 10 && is_numeric($habilidade2)) {
   $excelente[2]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade3)) {
+
+    if (is_numeric($prova->habilidade3)) {
       $habilidade3 += $prova->habilidade3;
       $divisor3++;
       $habilidade3 = $habilidade3/$divisor3;
     }
-  }
 
-  if ($habilidade3 >= 0 && $habilidade3 < 3 && $habilidade3 != NULL) {
+
+  if ($habilidade3 >= 0 && $habilidade3 < 3 && is_numeric($habilidade3)) {
   $nfez[3]++;
-  } elseif ($habilidade3 >= 3 && $habilidade3 < 7 && $habilidade3 != NULL) {
+} elseif ($habilidade3 >= 3 && $habilidade3 < 7 && is_numeric($habilidade3)) {
   $insuficiente[3]++;
-} elseif ($habilidade3 >= 7 && $habilidade3 < 10 && $habilidade3 != NULL) {
+} elseif ($habilidade3 >= 7 && $habilidade3 < 10 && is_numeric($habilidade3)) {
   $adequado[3]++;
-}elseif ($habilidade3 == 10 && $habilidade3 != NULL) {
+}elseif ($habilidade3 == 10 && is_numeric($habilidade3)) {
   $excelente[3]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade4)) {
+
+    if (is_numeric($prova->habilidade4)) {
       $habilidade4 += $prova->habilidade4;
       $divisor4++;
       $habilidade4 = $habilidade4/$divisor4;
     }
-  }
 
-  if ($habilidade4 >= 0 && $habilidade4 < 3 && $habilidade4 != NULL) {
+
+  if ($habilidade4 >= 0 && $habilidade4 < 3 && is_numeric($habilidade4)) {
   $nfez[4]++;
-} elseif ($habilidade4 >= 3 && $habilidade4 < 7 && $habilidade4 != NULL) {
+} elseif ($habilidade4 >= 3 && $habilidade4 < 7 && is_numeric($habilidade4)) {
   $insuficiente[4]++;
-} elseif ($habilidade4 >= 7 && $habilidade4 < 10 && $habilidade4 != NULL) {
+} elseif ($habilidade4 >= 7 && $habilidade4 < 10 && is_numeric($habilidade4)) {
   $adequado[4]++;
-}elseif ($habilidade4 == 10 && $habilidade4 != NULL) {
+}elseif ($habilidade4 == 10 && is_numeric($habilidade4)) {
   $excelente[4]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade5)) {
+
+    if (is_numeric($prova->habilidade5)) {
       $habilidade5 += $prova->habilidade5;
       $divisor5++;
       $habilidade5 = $habilidade5/$divisor5;
     }
-  }
 
-  if ($habilidade5 >= 0 && $habilidade5 < 3 && $habilidade5 != NULL) {
+
+  if ($habilidade5 >= 0 && $habilidade5 < 3 && is_numeric($habilidade5)) {
   $nfez[5]++;
-} elseif ($habilidade5 >= 3 && $habilidade5 < 7 && $habilidade5 != NULL) {
+} elseif ($habilidade5 >= 3 && $habilidade5 < 7 && is_numeric($habilidade5)) {
   $insuficiente[5]++;
-} elseif ($habilidade5 >= 7 && $habilidade5 < 10 && $habilidade5 != NULL) {
+} elseif ($habilidade5 >= 7 && $habilidade5 < 10 && is_numeric($habilidade5)) {
   $adequado[5]++;
-}elseif ($habilidade5 == 10 && $habilidade5 != NULL) {
+}elseif ($habilidade5 == 10 && is_numeric($habilidade5)) {
   $excelente[5]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade6)) {
+
+    if (is_numeric($prova->habilidade6)) {
       $habilidade6 += $prova->habilidade6;
       $divisor6++;
       $habilidade6 = $habilidade6/$divisor6;
     }
-  }
 
-  if ($habilidade6 >= 0 && $habilidade6 < 3 && $habilidade6 != NULL) {
+
+  if ($habilidade6 >= 0 && $habilidade6 < 3 && is_numeric($habilidade6)) {
   $nfez[6]++;
-} elseif ($habilidade6 >= 3 && $habilidade6 < 7 && $habilidade6 != NULL) {
+} elseif ($habilidade6 >= 3 && $habilidade6 < 7 && is_numeric($habilidade6)) {
   $insuficiente[6]++;
-} elseif ($habilidade6 >= 7 && $habilidade6 < 10 && $habilidade6 != NULL) {
+} elseif ($habilidade6 >= 7 && $habilidade6 < 10 && is_numeric($habilidade6)) {
   $adequado[6]++;
-}elseif ($habilidade6 == 10 && $habilidade6 != NULL) {
+}elseif ($habilidade6 == 10 && is_numeric($habilidade6)) {
   $excelente[6]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade7)) {
+
+    if (is_numeric($prova->habilidade7)) {
       $habilidade7 += $prova->habilidade7;
       $divisor7++;
       $habilidade7 = $habilidade7/$divisor7;
     }
-  }
 
-  if ($habilidade7 >= 0 && $habilidade7 < 3 && $habilidade7 != NULL) {
+
+  if ($habilidade7 >= 0 && $habilidade7 < 3 && is_numeric($habilidade7)) {
   $nfez[7]++;
-} elseif ($habilidade7 >= 3 && $habilidade7 < 7 && $habilidade7 != NULL) {
+} elseif ($habilidade7 >= 3 && $habilidade7 < 7 && is_numeric($habilidade7)) {
   $insuficiente[7]++;
-} elseif ($habilidade7 >= 7 && $habilidade7 < 10 && $habilidade7 != NULL) {
+} elseif ($habilidade7 >= 7 && $habilidade7 < 10 && is_numeric($habilidade7)) {
   $adequado[7]++;
-}elseif ($habilidade7 == 10 && $habilidade7 != NULL) {
+}elseif ($habilidade7 == 10 && is_numeric($habilidade7)) {
   $excelente[7]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade8)) {
+
+    if (is_numeric($prova->habilidade8)) {
       $habilidade8 += $prova->habilidade8;
       $divisor8++;
       $habilidade8 = $habilidade8/$divisor8;
     }
-  }
 
-  if ($habilidade8 >= 0 && $habilidade8 < 3 && $habilidade8 != NULL) {
+
+  if ($habilidade8 >= 0 && $habilidade8 < 3 && is_numeric($habilidade8)) {
   $nfez[8]++;
-} elseif ($habilidade8 >= 3 && $habilidade8 < 7 && $habilidade8 != NULL) {
+} elseif ($habilidade8 >= 3 && $habilidade8 < 7 && is_numeric($habilidade8)) {
   $insuficiente[8]++;
-} elseif ($habilidade8 >= 7 && $habilidade8 < 10 && $habilidade8 != NULL) {
+} elseif ($habilidade8 >= 7 && $habilidade8 < 10 && is_numeric($habilidade8)) {
   $adequado[8]++;
-}elseif ($habilidade8 == 10 && $habilidade8 != NULL) {
+}elseif ($habilidade8 == 10 && is_numeric($habilidade8)) {
   $excelente[8]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade9)) {
+
+    if (is_numeric($prova->habilidade9)) {
       $habilidade9 += $prova->habilidade9;
       $divisor9++;
       $habilidade9 = $habilidade9/$divisor9;
     }
-  }
 
-  if ($habilidade9 >= 0 && $habilidade9 < 3 && $habilidade9 != NULL) {
+
+  if ($habilidade9 >= 0 && $habilidade9 < 3 && is_numeric($habilidade9)) {
   $nfez[9]++;
-} elseif ($habilidade9 >= 3 && $habilidade9 < 7 && $habilidade9 != NULL) {
+} elseif ($habilidade9 >= 3 && $habilidade9 < 7 && is_numeric($habilidade9)) {
   $insuficiente[9]++;
-} elseif ($habilidade9 >= 7 && $habilidade9 < 10 && $habilidade9 != NULL) {
+} elseif ($habilidade9 >= 7 && $habilidade9 < 10 && is_numeric($habilidade9)) {
   $adequado[9]++;
-}elseif ($habilidade9 == 10 && $habilidade9 != NULL) {
+}elseif ($habilidade9 == 10 && is_numeric($habilidade9)) {
   $excelente[9]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade10)) {
+
+    if (is_numeric($prova->habilidade10)) {
       $habilidade10 += $prova->habilidade10;
       $divisor10++;
       $habilidade10 = $habilidade10/$divisor10;
     }
-  }
 
-  if ($habilidade10 >= 0 && $habilidade10 < 3 && $habilidade10 != NULL) {
+
+  if ($habilidade10 >= 0 && $habilidade10 < 3 && is_numeric($habilidade10)) {
   $nfez[10]++;
-} elseif ($habilidade10 >= 3 && $habilidade10 < 7 && $habilidade10 != NULL) {
+} elseif ($habilidade10 >= 3 && $habilidade10 < 7 && is_numeric($habilidade10)) {
   $insuficiente[10]++;
-} elseif ($habilidade10 >= 7 && $habilidade10 < 10 && $habilidade10 != NULL) {
+} elseif ($habilidade10 >= 7 && $habilidade10 < 10 && is_numeric($habilidade10)) {
   $adequado[10]++;
-}elseif ($habilidade10 == 10 && $habilidade10 != NULL) {
+}elseif ($habilidade10 == 10 && is_numeric($habilidade10)) {
   $excelente[10]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade11)) {
+
+    if (is_numeric($prova->habilidade11)) {
       $habilidade11 += $prova->habilidade11;
       $divisor11++;
       $habilidade11 = $habilidade11/$divisor11;
     }
-  }
 
-  if ($habilidade11 >= 0 && $habilidade11 < 3 && $habilidade11 != NULL) {
+
+  if ($habilidade11 >= 0 && $habilidade11 < 3 && is_numeric($habilidade11)) {
   $nfez[11]++;
-} elseif ($habilidade11 >= 3 && $habilidade11 < 7 && $habilidade11 != NULL) {
+} elseif ($habilidade11 >= 3 && $habilidade11 < 7 && is_numeric($habilidade11)) {
   $insuficiente[11]++;
-} elseif ($habilidade11 >= 7 && $habilidade11 < 10 && $habilidade11 != NULL) {
+} elseif ($habilidade11 >= 7 && $habilidade11 < 10 && is_numeric($habilidade11)) {
   $adequado[11]++;
-}elseif ($habilidade11 == 10 && $habilidade11 != NULL) {
+}elseif ($habilidade11 == 10 && is_numeric($habilidade11)) {
   $excelente[11]++;
   }
-  foreach ($avaliacao as $prova) {
-    if (!empty($prova->habilidade12)) {
+
+    if (is_numeric($prova->habilidade12)) {
       $habilidade12 += $prova->habilidade12;
       $divisor12++;
       $habilidade12 = $habilidade12/$divisor12;
+  }
+
+
+  if ($habilidade12 >= 0 && $habilidade12 < 3 && is_numeric($habilidade12)) {
+  $nfez[12]++;
+} elseif ($habilidade12 >= 3 && $habilidade12 < 7 && is_numeric($habilidade12)) {
+  $insuficiente[12]++;
+} elseif ($habilidade12 >= 7 && $habilidade12 < 10 && is_numeric($habilidade12)) {
+  $adequado[12]++;
+}elseif ($habilidade12 == 10 && is_numeric($habilidade12)) {
+  $excelente[12]++;
     }
   }
-
-  if ($habilidade12 >= 0 && $habilidade12 < 3 && $habilidade12 != NULL) {
-  $nfez[12]++;
-} elseif ($habilidade12 >= 3 && $habilidade12 < 7 && $habilidade12 != NULL) {
-  $insuficiente[12]++;
-} elseif ($habilidade12 >= 7 && $habilidade12 < 10 && $habilidade12 != NULL) {
-  $adequado[12]++;
-}elseif ($habilidade12 == 10 && $habilidade12 != NULL) {
-  $excelente[12]++;
-  }
-
 }
+
 
 if ($nfez[1] == NULL && $insuficiente[1] == NULL && $adequado[1] == NULL && $excelente[1] == NULL) {
   $totalh1 = NULL;
@@ -462,7 +464,6 @@ if ($totalh12 == NULL) {
 @section('graficos')
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <?php
-
 $h1 = array(
 	array("label"=>"Não Fez", "y"=>$nfez[1]),
 	array("label"=>"Insuficiente", "y"=>$insuficiente[1]),
@@ -731,7 +732,7 @@ chart12.render();
 
 @section('cabecalho')
   <h3>Alunos Cadastrados:</h3>
-  <a class="btn btn-outline-info" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
+  <a class="btn btn-outline-primary" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
 @stop
 
 
@@ -764,7 +765,7 @@ chart12.render();
       <a class="btn btn-primary btn-sm" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
       <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
       <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a><br>
-      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver notas</a>
+      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver notas</a>
     </td>
 </tr>
   @endforeach

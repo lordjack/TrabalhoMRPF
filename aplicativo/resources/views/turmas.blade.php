@@ -12,7 +12,6 @@
 @section('listagem')
 <table class='table'>
 <tr>
-  <th>Id</th>
   <th>Curso</th>
   <th>Nome</th>
   <th>Turno</th>
@@ -22,7 +21,6 @@
 
   @foreach($turmas as $item)
 <tr>
-    <td>{{$item->id}}</td>
     <td>{{$item->curso}}</td>
     <td>{{$item->nome}}</td>
     <td>{{$item->turno}}</td>

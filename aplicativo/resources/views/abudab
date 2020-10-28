@@ -1,0 +1,14 @@
+var chart15 = new CanvasJS.Chart("graficoc3", {
+	animationEnabled: true,
+	title: {
+		text: "Notas na Competência 3"
+	},
+
+	data: [{
+		type: "pie",
+		yValueFormatString: "#,##0.00\"%\"",
+		indexLabel: "{label} ({y})",
+		dataPoints: <?php echo json_encode($c3, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart15.render();

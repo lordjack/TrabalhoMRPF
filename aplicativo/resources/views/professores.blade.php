@@ -12,7 +12,6 @@
 @section('listagem')
 <table class='table'>
 <tr>
-  <th>Id</th>
   <th>Nome</th>
   <th>E-Mail</th>
   <th>Contato</th>
@@ -24,7 +23,6 @@
 
   @foreach($professores as $item)
 <tr>
-    <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
     <td>{{$item->email}}</td>
     <td>{{$item->contato}}</td>

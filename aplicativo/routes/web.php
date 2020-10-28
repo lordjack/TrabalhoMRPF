@@ -21,7 +21,7 @@ Route::get('/login', function (){
 
 Route::get('/avaliacao/cadastrar/{id}', 'AvaliacaoController@cadastrar');
 Route::post('/avaliacao/salvar/{id}', 'AvaliacaoController@salvar');
-
+Route::get('/avaliacoes/exibir/{id}', 'AvaliacaoController@exibir');
 Route::get('/avaliacoes/{id}', 'AvaliacaoController@listar');
 Route::get('/avaliacoes/editar/{id}', 'AvaliacaoController@editar');
 Route::get('/avaliacoes/deletar/{id}', 'AvaliacaoController@deletar');

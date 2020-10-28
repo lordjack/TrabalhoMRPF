@@ -24,6 +24,9 @@ $divisor9 = 0;
 $divisor10 = 0;
 $divisor11 = 0;
 $divisor12 = 0;
+$divisorc1 = 0;
+$divisorc2 = 0;
+$divisorc3 = 0;
 $soma1 = 0;
 $soma2 = 0;
 $soma3 = 0;
@@ -36,6 +39,11 @@ $soma9 = 0;
 $soma10 = 0;
 $soma11 = 0;
 $soma12 = 0;
+$somac1 = 0;
+$somac2 = 0;
+$somac3 = 0;
+
+
 
 foreach ($avaliacoes as $item) {
   if (!is_null($item->habilidade1)) {
@@ -85,6 +93,18 @@ foreach ($avaliacoes as $item) {
   if (!is_null($item->habilidade12)) {
     $soma12 += $item->habilidade12;
     $divisor12++;
+  }
+  if (!is_null($item->competencia1)) {
+    $somac1 += $item->competencia1;
+    $divisorc1++;
+  }
+  if (!is_null($item->competencia2)) {
+    $somac2 += $item->competencia2;
+    $divisorc2++;
+  }
+  if (!is_null($item->competencia3)) {
+    $somac3 += $item->competencia3;
+    $divisorc3++;
   }
 
 }
@@ -148,6 +168,22 @@ if ($divisor12 != 0) {
 } else {
   $h12 = $soma12;
 }
+if ($divisorc1 != 0) {
+  $c1 = $somac1/$divisorc1;
+} else {
+  $c1 = $somac1;
+}
+if ($divisorc2 != 0) {
+  $c2 = $somac2/$divisorc2;
+} else {
+  $c2 = $somac2;
+}
+if ($divisorc3 != 0) {
+  $c3 = $somac3/$divisorc3;
+} else {
+  $c3 = $somac3;
+}
+
 
 $medias = array(
   array("y" => $h1, "label" => "h1"),
@@ -162,7 +198,12 @@ $medias = array(
   array("y" => $h10, "label" => "h10"),
   array("y" => $h11, "label" => "h11"),
   array("y" => $h12, "label" => "h12")
+);
 
+$mediasComp = array(
+  array("y" => $c1, "label" => "Competencia 1"),
+  array("y" => $c2, "label" => "Competencia 2"),
+  array("y" => $c3, "label" => "Competencia 2")
 );
 
  ?>
@@ -176,7 +217,8 @@ window.onload = function () {
 		text: "Médias do aluno"
 	},
 	axisY: {
-		title: "Nota média por habilidade"
+		title: "Nota média por habilidade",
+    maximum: 10
 	},
 	data: [{
 		type: "column",
@@ -191,7 +233,8 @@ var tempo = new CanvasJS.Chart("desempenho_tempo", {
 		text: "Desempenho ao longo do tempo"
 	},
 	axisY: {
-		title: "Nota final"
+		title: "Nota final",
+    maximum: 100
 	},
 	data: [{
 		type: "line",
@@ -199,6 +242,24 @@ var tempo = new CanvasJS.Chart("desempenho_tempo", {
 	}]
 });
 tempo.render();
+
+var mediasc = new CanvasJS.Chart("desempenho_mediasc", {
+animationEnabled: true,
+theme: "light1",
+title:{
+  text: "Médias do aluno por competência"
+},
+axisY: {
+  title: "Nota média por Compentêcia",
+  maximum: 100
+},
+data: [{
+  type: "column",
+  yValueFormatString: "#,##0.##",
+  dataPoints: <?php echo json_encode($mediasComp, JSON_NUMERIC_CHECK); ?>
+}]
+});
+mediasc.render();
 
 }
 </script>
@@ -214,8 +275,6 @@ tempo.render();
 @section('listagem')
 <table class='table'>
 <tr>
-  <th>ID</th>
-  <th>Aluno_id</th>
   <th>Data</th>
   <th>Nota Competencia 1</th>
   <th>Nota Compentecia 2</th>
@@ -226,8 +285,6 @@ tempo.render();
 
   @foreach($avaliacoes as $item)
 <tr>
-    <td>{{$item->id}}</td>
-    <td>{{$item->aluno_id}}</td>
     <td>{{$item->data}}</td>
     <td>{{$item->competencia1}}</td>
     <td>{{$item->competencia2}}</td>
@@ -236,14 +293,16 @@ tempo.render();
 
     <td>
       <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover Avaliação?');" href="{{ action('AvaliacaoController@deletar', $item->id) }}">Excluir</a>
-
+      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@exibir', $item->id) }}">Exibir gráfico</a>
     </td>
 </tr>
   @endforeach
 
 </table>
 <h2>Desempenho do aluno:</h2>
-<div id="desempenho_tempo" style="height: 250px; width: 50%; float:'right'"></div>
-<div id="desempenho_medias" style="height: 250px; width: 50%; float:'left'"></div>
+<div id="desempenho_tempo" style="height: 250px; width: 50%"></div>
+<div id="desempenho_medias" style="height: 250px; width: 50% "></div>
+<small>Notas "Não se aplica" não entram no cálculo da média do aluno</small>
+<div id="desempenho_mediasc" style="height: 250px; width: 50%"></div>
 <small>Notas "Não se aplica" não entram no cálculo da média do aluno</small>
 @stop

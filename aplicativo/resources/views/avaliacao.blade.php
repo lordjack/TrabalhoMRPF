@@ -20,7 +20,7 @@
       <a class="nav-link  text-white" href="{{ url('/cursos')}}">Cursos</a>
           </li>
           <li class="navbar-item active">
-      <a class="nav-link  text-white" href="{{ url()->previous() }}">Voltar</a>
+      <a class="nav-link  text-white" href="{{ action('AlunoController@listar', $aluno->turma_id) }}">Voltar</a>
           </li>
         </ul>
     </nav>
@@ -30,15 +30,15 @@
     <table class="table" style="width:100%">
       <tr class=" table-primary" >
         <th colspan="5">
-      <h3>Competencia 1</h3>
+      <h3>Delineamento Do problema</h3>
     </th>
       </tr>
       <tr>
-        <th>Habilidade 1</th>
-        <th>Habilidade 2</th>
-        <th>Habilidade 3</th>
-        <th>Habilidade 4</th>
-        <th>Habilidade 5</th>
+        <th>Ler o enunciado do problema com atenção, buscando a sua compreensão</th>
+        <th>Representar a situação-problema por desenhos, gráficos ou diagramas para melhor visualizá-la</th>
+        <th>Listar os dados (expressando as grandezas envolvidas em notação simbólica)</th>
+        <th>Listar a(s) grandeza(s) incógnita(s), expressando-a(s) em notação simbólica)</th>
+        <th>Verificar se as unidades das grandezas envolvidas fazem parte de um mesmo sistema de unidades; em caso negativo, estar atento para as transformações necessárias</th>
 
       </tr>
       <tr>
@@ -79,17 +79,17 @@
         </select> </th>
         <tr class=" table-primary">
           <th colspan="5">
-          <h3 >Competencia 2</h3>
+          <h3 >Resolução do problema</h3>
           </th>
         </tr>
         <tr>
 
 
 
-        <th>Habilidade 6</th>
-        <th>Habilidade 7</th>
-        <th>Habilidade 8</th>
-        <th>Habilidade 9</th>
+        <th>Analisar qualitativamente a situação-problema, elaborando as hipóteses necessárias</th>
+        <th>Quantificar a situação-problema, escrevendo uma equação de definição, lei ou princípio em que esteja envolvida a grandeza incógnita e que seja adequada ao problema</th>
+        <th>Situar e orientar o sistema de referência de forma a facilitar a resolução do problema</th>
+        <th>Desenvolver o problema literalmente, fazendo as substituições numéricas apenas ao seu final ou ao final de cada etapa</th>
         <th></th>
         </tr>
 
@@ -126,14 +126,14 @@
       </tr>
       <tr class="table-primary">
         <th colspan="5">
-        <h3>Competencia 3</h3>
+        <h3>Análise do problema</h3>
         </th>
       </tr>
       <tr>
 
-        <th>Habilidade 10</th>
-        <th>Habilidade 11</th>
-        <th>Habilidade 12</th>
+        <th>Analisar criticamente o resultado encontrado</th>
+        <th>Registar, por escrito, as partes ou pontos chave no processo de resolução do problema</th>
+        <th>Considerar o problema como ponto de partida para o estudo de novas situações-problema</th>
         <th></th>
         <th></th>
         </th>

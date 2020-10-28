@@ -1,10 +1,10 @@
 <?php
 
 use App\Avaliacao;
-$nfez = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
-$insuficiente = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
-$adequado = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
-$excelente = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
+$nfez = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
+$insuficiente = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
+$adequado = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
+$excelente = [NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
 
 foreach ($alunos as $item) {
   $avaliacao = Avaliacao::where('aluno_id', $item->id)->get();
@@ -32,13 +32,62 @@ foreach ($alunos as $item) {
   $divisor10 = 0;
   $divisor11 = 0;
   $divisor12 = 0;
+  $divisorc1 = 0;
+  $divisorc2 = 0;
+  $divisorc3 = 0;
 
 
     foreach ($avaliacao as $prova) {
+
+      if (is_numeric($prova->competencia1)) {
+        $competencia1 = $prova->competencia1;
+
+      }
+
+
+      if ($competencia1 >= 0 && $competencia1 < 30 && is_numeric($competencia1)) {
+      $nfez[13]++;
+    } elseif ($competencia1 >= 30 && $competencia1 < 70 && is_numeric($competencia1)) {
+      $insuficiente[13]++;
+    } elseif ($competencia1 >= 70 && $competencia1 < 100 && is_numeric($competencia1)) {
+      $adequado[13]++;
+    }elseif ($competencia1 == 100 && is_numeric($competencia1)){
+      $excelente[13]++;
+      }
+      if (is_numeric($prova->competencia2)) {
+        $competencia2 = $prova->competencia2;
+
+      }
+
+
+      if ($competencia2 >= 0 && $competencia2 < 30 && is_numeric($competencia2)) {
+      $nfez[14]++;
+    } elseif ($competencia2 >= 30 && $competencia2 < 70 && is_numeric($competencia2)) {
+      $insuficiente[14]++;
+    } elseif ($competencia2 >= 70 && $competencia2 < 100 && is_numeric($competencia2)) {
+      $adequado[14]++;
+    }elseif ($competencia2 == 100 && is_numeric($competencia2)){
+      $excelente[14]++;
+      }
+      if (is_numeric($prova->competencia3)) {
+        $competencia3 = $prova->competencia3;
+
+      }
+
+
+      if ($competencia3 >= 0 && $competencia3 < 30 && is_numeric($competencia3)) {
+      $nfez[15]++;
+    } elseif ($competencia3 >= 30 && $competencia3 < 70 && is_numeric($competencia3)) {
+      $insuficiente[15]++;
+    } elseif ($competencia3 >= 70 && $competencia3 < 100 && is_numeric($competencia3)) {
+      $adequado[15]++;
+    }elseif ($competencia3 == 100 && is_numeric($competencia3)){
+      $excelente[15]++;
+      }
+
       if (is_numeric($prova->habilidade1)) {
-        $habilidade1 += $prova->habilidade1;
-        $divisor1++;
-        $habilidade1 = $habilidade1/$divisor1;
+        $habilidade1 = $prova->habilidade1;
+
       }
 
 
@@ -55,9 +104,8 @@ foreach ($alunos as $item) {
 
 
     if (is_numeric($prova->habilidade2)) {
-      $habilidade2 += $prova->habilidade2;
-      $divisor2++;
-      $habilidade2 = $habilidade2/$divisor2;
+      $habilidade2 = $prova->habilidade2;
+
     }
 
 
@@ -72,9 +120,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade3)) {
-      $habilidade3 += $prova->habilidade3;
-      $divisor3++;
-      $habilidade3 = $habilidade3/$divisor3;
+      $habilidade3 = $prova->habilidade3;
+
     }
 
 
@@ -89,9 +136,7 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade4)) {
-      $habilidade4 += $prova->habilidade4;
-      $divisor4++;
-      $habilidade4 = $habilidade4/$divisor4;
+      $habilidade4 = $prova->habilidade4;
     }
 
 
@@ -106,9 +151,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade5)) {
-      $habilidade5 += $prova->habilidade5;
-      $divisor5++;
-      $habilidade5 = $habilidade5/$divisor5;
+      $habilidade5 = $prova->habilidade5;
+
     }
 
 
@@ -123,9 +167,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade6)) {
-      $habilidade6 += $prova->habilidade6;
-      $divisor6++;
-      $habilidade6 = $habilidade6/$divisor6;
+      $habilidade6 = $prova->habilidade6;
+
     }
 
 
@@ -140,9 +183,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade7)) {
-      $habilidade7 += $prova->habilidade7;
-      $divisor7++;
-      $habilidade7 = $habilidade7/$divisor7;
+      $habilidade7 = $prova->habilidade7;
+
     }
 
 
@@ -157,9 +199,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade8)) {
-      $habilidade8 += $prova->habilidade8;
-      $divisor8++;
-      $habilidade8 = $habilidade8/$divisor8;
+      $habilidade8 = $prova->habilidade8;
+
     }
 
 
@@ -174,9 +215,7 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade9)) {
-      $habilidade9 += $prova->habilidade9;
-      $divisor9++;
-      $habilidade9 = $habilidade9/$divisor9;
+      $habilidade9 = $prova->habilidade9;
     }
 
 
@@ -191,9 +230,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade10)) {
-      $habilidade10 += $prova->habilidade10;
-      $divisor10++;
-      $habilidade10 = $habilidade10/$divisor10;
+      $habilidade10 = $prova->habilidade10;
+
     }
 
 
@@ -208,9 +246,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade11)) {
-      $habilidade11 += $prova->habilidade11;
-      $divisor11++;
-      $habilidade11 = $habilidade11/$divisor11;
+      $habilidade11 = $prova->habilidade11;
+
     }
 
 
@@ -225,9 +262,8 @@ foreach ($alunos as $item) {
   }
 
     if (is_numeric($prova->habilidade12)) {
-      $habilidade12 += $prova->habilidade12;
-      $divisor12++;
-      $habilidade12 = $habilidade12/$divisor12;
+      $habilidade12 = $prova->habilidade12;
+
   }
 
 
@@ -242,6 +278,8 @@ foreach ($alunos as $item) {
     }
   }
 }
+
+
 
 
 if ($nfez[1] == NULL && $insuficiente[1] == NULL && $adequado[1] == NULL && $excelente[1] == NULL) {
@@ -314,6 +352,23 @@ if ($nfez[12] == NULL && $insuficiente[12] == NULL && $adequado[12] == NULL && $
 }else {
   $totalh12 = $nfez[12] + $insuficiente[12] + $adequado[12] + $excelente[12];
 }
+if ($nfez[13] == NULL && $insuficiente[13] == NULL && $adequado[13] == NULL && $excelente[13] == NULL) {
+  $totalc1 = NULL;
+}else {
+  $totalc1 = $nfez[13] + $insuficiente[13] + $adequado[13] + $excelente[13];
+}
+if ($nfez[14] == NULL && $insuficiente[14] == NULL && $adequado[14] == NULL && $excelente[14] == NULL) {
+  $totalc2 = NULL;
+}else {
+  $totalc2 = $nfez[14] + $insuficiente[14] + $adequado[14] + $excelente[14];
+}
+if ($nfez[15] == NULL && $insuficiente[15] == NULL && $adequado[15] == NULL && $excelente[15] == NULL) {
+  $totalc3 = NULL;
+}else {
+  $totalc3 = $nfez[15] + $insuficiente[15] + $adequado[15] + $excelente[15];
+}
+
+
 
 
 if ($totalh1 == NULL) {
@@ -448,11 +503,39 @@ if ($totalh12 == NULL) {
   $adequado[12] = $adequado[12]*100/$totalh12;
   $excelente[12] = $excelente[12]*100/$totalh12;
 }
-
-
-
-
-
+if ($totalc1 == NULL) {
+  $nfez[13] == NULL;
+  $insuficiente[13] == NULL;
+  $adequado[13] == NULL;
+  $excelente[13] == NULL;
+} else {
+  $nfez[13] = $nfez[13]*100/$totalc1;
+  $insuficiente[13] = $insuficiente[13]*100/$totalc1;
+  $adequado[13] = $adequado[13]*100/$totalc1;
+  $excelente[13] = $excelente[13]*100/$totalc1;
+}
+if ($totalc2 == NULL) {
+  $nfez[14] == NULL;
+  $insuficiente[14] == NULL;
+  $adequado[14] == NULL;
+  $excelente[14] == NULL;
+} else {
+  $nfez[14] = $nfez[14]*100/$totalc2;
+  $insuficiente[14] = $insuficiente[14]*100/$totalc2;
+  $adequado[14] = $adequado[14]*100/$totalc2;
+  $excelente[14] = $excelente[14]*100/$totalc2;
+}
+if ($totalc3 == NULL) {
+  $nfez[15] == NULL;
+  $insuficiente[15] == NULL;
+  $adequado[15] == NULL;
+  $excelente[15] == NULL;
+} else {
+  $nfez[15] = $nfez[15]*100/$totalc3;
+  $insuficiente[15] = $insuficiente[15]*100/$totalc3;
+  $adequado[15] = $adequado[15]*100/$totalc3;
+  $excelente[15] = $excelente[15]*100/$totalc3;
+}
 
  ?>
 
@@ -464,6 +547,24 @@ if ($totalh12 == NULL) {
 @section('graficos')
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <?php
+$c1 = array(
+	array("label"=>"Não Fez", "y"=>$nfez[13]),
+	array("label"=>"Insuficiente", "y"=>$insuficiente[13]),
+	array("label"=>"Adequado", "y"=>$adequado[13]),
+	array("label"=>"Excelente", "y"=>$excelente[13]),
+);
+$c2 = array(
+	array("label"=>"Não Fez", "y"=>$nfez[14]),
+	array("label"=>"Insuficiente", "y"=>$insuficiente[14]),
+	array("label"=>"Adequado", "y"=>$adequado[14]),
+	array("label"=>"Excelente", "y"=>$excelente[14]),
+);
+$c3 = array(
+	array("label"=>"Não Fez", "y"=>$nfez[15]),
+	array("label"=>"Insuficiente", "y"=>$insuficiente[15]),
+	array("label"=>"Adequado", "y"=>$adequado[15]),
+	array("label"=>"Excelente", "y"=>$excelente[15]),
+);
 $h1 = array(
 	array("label"=>"Não Fez", "y"=>$nfez[1]),
 	array("label"=>"Insuficiente", "y"=>$insuficiente[1]),
@@ -552,7 +653,7 @@ window.onload = function() {
 var chart1 = new CanvasJS.Chart("graficoh1", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 1"
+		text: "Notas na habilidade 1"
 	},
 
 	data: [{
@@ -566,7 +667,7 @@ chart1.render();
 var chart2 = new CanvasJS.Chart("graficoh2", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 2"
+		text: "Notas na habilidade 2"
 	},
 
 	data: [{
@@ -581,7 +682,7 @@ chart2.render();
 var chart3 = new CanvasJS.Chart("graficoh3", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 3"
+		text: "Notas na habilidade 3"
 	},
 
 	data: [{
@@ -596,7 +697,7 @@ chart3.render();
 var chart4 = new CanvasJS.Chart("graficoh4", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 4"
+		text: "Notas na habilidade 4"
 	},
 
 	data: [{
@@ -610,7 +711,7 @@ chart4.render();
 var chart5 = new CanvasJS.Chart("graficoh5", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 5"
+		text: "Notas na habilidade 5"
 	},
 
 	data: [{
@@ -624,7 +725,7 @@ chart5.render();
 var chart6 = new CanvasJS.Chart("graficoh6", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 6"
+		text: "Notas na habilidade 6"
 	},
 
 	data: [{
@@ -638,7 +739,7 @@ chart6.render();
 var chart7 = new CanvasJS.Chart("graficoh7", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 7"
+		text: "Notas na habilidade 7"
 	},
 
 	data: [{
@@ -652,7 +753,7 @@ chart7.render();
 var chart8 = new CanvasJS.Chart("graficoh8", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 8"
+		text: "Notas na habilidade 8"
 	},
 
 	data: [{
@@ -666,7 +767,7 @@ chart8.render();
 var chart9 = new CanvasJS.Chart("graficoh9", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 9"
+		text: "Notas na habilidade 9"
 	},
 
 	data: [{
@@ -680,7 +781,7 @@ chart9.render();
 var chart10 = new CanvasJS.Chart("graficoh10", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 10"
+		text: "Notas na habilidade 10"
 	},
 
 	data: [{
@@ -694,7 +795,7 @@ chart10.render();
 var chart11 = new CanvasJS.Chart("graficoh11", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 11"
+		text: "Notas na habilidade 11"
 	},
 
 	data: [{
@@ -708,7 +809,7 @@ chart11.render();
 var chart12 = new CanvasJS.Chart("graficoh12", {
 	animationEnabled: true,
 	title: {
-		text: "Médias na habilidade 12"
+		text: "Notas na habilidade 12"
 	},
 
 	data: [{
@@ -719,6 +820,49 @@ var chart12 = new CanvasJS.Chart("graficoh12", {
 	}]
 });
 chart12.render();
+var chart13 = new CanvasJS.Chart("graficoc1", {
+	animationEnabled: true,
+	title: {
+		text: "Notas na Competência 1"
+	},
+
+	data: [{
+		type: "pie",
+		yValueFormatString: "#,##0.00\"%\"",
+		indexLabel: "{label} ({y})",
+		dataPoints: <?php echo json_encode($c1, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart13.render();
+var chart14 = new CanvasJS.Chart("graficoc2", {
+	animationEnabled: true,
+	title: {
+		text: "Notas na Competência 2"
+	},
+
+	data: [{
+		type: "pie",
+		yValueFormatString: "#,##0.00\"%\"",
+		indexLabel: "{label} ({y})",
+		dataPoints: <?php echo json_encode($c2, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart14.render();
+var chart15 = new CanvasJS.Chart("graficoc3", {
+	animationEnabled: true,
+	title: {
+		text: "Notas na Competência 3"
+	},
+
+	data: [{
+		type: "pie",
+		yValueFormatString: "#,##0.00\"%\"",
+		indexLabel: "{label} ({y})",
+		dataPoints: <?php echo json_encode($c3, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart15.render();
+
 
 
 }
@@ -740,7 +884,6 @@ chart12.render();
 
 <table class='table'>
 <tr>
-  <th>Id</th>
   <th>Nome</th>
   <th>Número</th>
   <th>Matrícula</th>
@@ -753,7 +896,6 @@ chart12.render();
 
   @foreach($alunos as $item)
 <tr>
-    <td>{{$item->id}}</td>
     <td>{{$item->nome}}</td>
     <td>{{$item->numero}}</td>
     <td>{{$item->matricula}}</td>
@@ -771,6 +913,9 @@ chart12.render();
   @endforeach
 
 </table>
+<div id="graficoc1" style="height: 200px; width: 30%;"></div>
+<div id="graficoc2" style="height: 200px; width: 30%;"></div>
+<div id="graficoc3" style="height: 200px; width: 30%;"></div>
 <div id="graficoh1" style="height: 200px; width: 30%;"></div>
 <div id="graficoh2" style="height: 200px; width: 30%;"></div>
 <div id="graficoh3" style="height: 200px; width: 30%;"></div>

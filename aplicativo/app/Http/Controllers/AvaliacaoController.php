@@ -98,4 +98,14 @@ public function deletar($id)
 
   return redirect()->action('AvaliacaoController@listar', $aluno);
 }
+public function exibir($id)
+{
+  $avaliacao = Avaliacao::find($id);
+
+  $aluno = Aluno::find($avaliacao->aluno_id);
+  $avaliacao->aluno = $aluno->nome;
+
+  return view('prova')->with('prova', $avaliacao);
+}
+
 }

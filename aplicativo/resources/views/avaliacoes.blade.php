@@ -293,7 +293,7 @@ mediasc.render();
 
     <td>
       <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover Avaliação?');" href="{{ action('AvaliacaoController@deletar', $item->id) }}">Excluir</a>
-      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@exibir', $item->id) }}">Exibir gráfico</a>
+      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@exibir', $item->id) }}">Exibir detalhes</a>
     </td>
 </tr>
   @endforeach

@@ -24,7 +24,11 @@ function qualitivar($nota){
 }
  ?>
 
- <table class="table">
+ <table class="table table-dark">
+   <tr class="bg-primary text-white" >
+     <th colspan="5">
+   <h3>Delineamento do problema</h3>
+ </th>
    <tr>
      <th>Habilidade 1</th>
      <?php qualitivar($prova->habilidade1); ?>
@@ -45,6 +49,10 @@ function qualitivar($nota){
      <th>Habilidade 5</th>
      <?php qualitivar($prova->habilidade5); ?>
    </tr>
+   <tr class="bg-primary text-white" >
+     <th colspan="5">
+   <h3>Delineamento do problema</h3>
+ </th>
    <tr>
      <th>Habilidade 6</th>
      <?php qualitivar($prova->habilidade6); ?>
@@ -61,6 +69,10 @@ function qualitivar($nota){
      <th>Habilidade 9</th>
      <?php qualitivar($prova->habilidade9); ?>
    </tr>
+   <tr class="bg-primary text-white" >
+     <th colspan="5">
+   <h3>Delineamento do problema</h3>
+ </th>
    <tr>
      <th>Habilidade 10</th>
      <?php qualitivar($prova->habilidade10); ?>

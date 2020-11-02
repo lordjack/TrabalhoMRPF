@@ -28,9 +28,9 @@
     <div class="container mt-4">
     <form class="form-group" action="{{ action('AvaliacaoController@cadastrar', $aluno->id) }}" method="get" style="text-align:center">
     <table class="table" style="width:100%">
-      <tr class=" table-primary" >
+      <tr class="table-primary" >
         <th colspan="5">
-      <h3>Delineamento Do problema</h3>
+      <h3>Delineamento do problema</h3>
     </th>
       </tr>
       <tr>

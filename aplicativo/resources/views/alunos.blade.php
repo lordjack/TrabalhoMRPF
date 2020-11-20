@@ -904,9 +904,9 @@ chart15.render();
     <td>{{$item->contato}}</td>
     <td>{{$item->contato_responsaveis}}</td>
     <td>
-      <a class="btn btn-primary btn-sm" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
-      <a class="btn btn-primary btn-sm" onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
-      <a class="btn btn-primary btn-sm" href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a><br>
+      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
+      <a class="btn btn-primary btn-sm mt-1" onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
+      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a>
       <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver notas</a>
     </td>
 </tr>

@@ -49,3 +49,9 @@ Route::get('/turmas/cadastrar', 'TurmaController@cadastrar');
 Route::post('/turmas/salvar/{id}', 'TurmaController@salvar');
 Route::get('/turmas/editar/{id}', 'TurmaController@editar');
 Route::get('/turmas/deletar/{id}', 'TurmaController@deletar');
+
+Route::get('/responsavel', 'ResponsavelAlunoController@listar');
+Route::get('/responsavel/cadastrar', 'ResponsavelAlunoController@cadastrar');
+Route::post('/responsavel/salvar/{id}', 'ResponsavelAlunoController@salvar');
+Route::get('/responsavel/editar/{id}', 'ResponsavelAlunoController@editar');
+Route::get('/responsavel/deletar/{id}', 'ResponsavelAlunoController@deletar');

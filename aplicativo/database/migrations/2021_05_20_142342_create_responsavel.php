@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfessor extends Migration
+class CreateResponsavel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateProfessor extends Migration
      */
     public function up()
     {
-        Schema::create('professor', function (Blueprint $table) {
+        Schema::create('responsavel', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('email');
             $table->string('contato');
-            $table->string('area');
-            $table->string('titulacao');
-            $table->string('formacao');
+            $table->foreignId('resp_id')->constrained('aluno');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateProfessor extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('professor');
+        Schema::dropIfExists('responsavel');
     }
 }

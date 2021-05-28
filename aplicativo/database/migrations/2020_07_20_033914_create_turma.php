@@ -18,7 +18,6 @@ class CreateTurma extends Migration
             $table->foreignId('curso_id')->constrained('curso');
             $table->string('nome');
             $table->string('serie');
-            $table->foreignId('prof_id')->constrained('professor');
             $table->string('turno');
             $table->timestamps();
         });

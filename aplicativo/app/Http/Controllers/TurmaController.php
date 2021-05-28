@@ -60,6 +60,7 @@ public function editar($id)
   $turma = Turma::find($id);
   $cursos = Curso::get();
 
+
   return view('turmaEditar')->with('turmas',$turma)->with('cursos', $cursos);
 }
 

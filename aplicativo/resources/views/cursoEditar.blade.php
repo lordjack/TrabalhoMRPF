@@ -3,7 +3,7 @@
 @section('titulo', 'Cadastrar Cursos')
 
 @section('form')
-
+<h3 class="h3">Editar Curso</h3><br>
       <form class="form-group" action="{{ action('CursoController@salvar', $cursos->id) }}" method="post">
         @csrf
       <label>Nome</label><br>

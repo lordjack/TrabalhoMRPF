@@ -875,12 +875,12 @@ chart15.render();
 @stop
 
 @section('cabecalho')
-  <h3>Alunos Cadastrados:</h3>
+<h3 class="h3">Alunos Cadastrados</h3><br>
   <a class="btn btn-outline-primary" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
 @stop
 
 
-@section('listagem')
+@section('listagem')<br>
 
 <table class='table'>
 <tr>

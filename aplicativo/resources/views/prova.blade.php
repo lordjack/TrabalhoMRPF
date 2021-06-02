@@ -7,7 +7,7 @@
 <h2 style="margin-bottom:30px">Notas de <?php echo "$prova->aluno" ?>:</h2>
 @stop
 
-@section('listagem')
+@section('listagem')<br>
 <?php
 function qualitivar($nota){
   if ($nota >= 0 && $nota < 3 && is_numeric($nota)) {

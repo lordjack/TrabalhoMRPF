@@ -3,6 +3,7 @@
 @section('titulo', 'Cadastrar Professores')
 
 @section('form')
+<h3 class="h3">Editar Professor</h3><br>
 
     <form class="form-group" action="{{ action('ProfessorController@salvar', $professores->id) }}" method="post">
       @csrf

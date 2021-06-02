@@ -3,6 +3,7 @@
 @section('titulo', 'Cadastrar Turmas')
 
 @section('form')
+<h3 class="h3">Cadastrar Turma</h3><br>
     <form class="form-group" action="{{ action('TurmaController@salvar', 0) }}" method="post">
       @csrf
       <label>Nome</label><br>

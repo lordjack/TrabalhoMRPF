@@ -4,12 +4,12 @@
 
 
 @section('cabecalho')
-  <h3>Professores Cadastrados:</h3>
+  <h3 class="h3">Professores Cadastrados</h3><br>
   <a class="btn btn-outline-primary" href="{{ action('ProfessorController@cadastrar') }}">Cadastrar Professor</a>
 @stop
 
 
-@section('listagem')
+@section('listagem')<br>
 <table class='table'>
 <tr>
   <th>Nome</th>

@@ -267,12 +267,12 @@ mediasc.render();
 
 @stop
 
-@section('cabecalho')
-  <h2>Avaliações Cadastradas:</h2>
+@section('cabecalho')<br>
+<h3 class="h3">Avaliações Cadastradas</h3>
 @stop
 
 
-@section('listagem')
+@section('listagem')<br>
 <table class='table'>
 <tr>
   <th>Data</th>
@@ -298,8 +298,8 @@ mediasc.render();
 </tr>
   @endforeach
 
-</table>
-<h2>Desempenho do aluno:</h2>
+</table><br><br>
+<h3 class="h3">Desempenho do alunos</h3><br><br>
 <div id="desempenho_tempo" style="height: 250px; width: 50%"></div>
 <div id="desempenho_medias" style="height: 250px; width: 50% "></div>
 <small>Notas "Não se aplica" não entram no cálculo da média do aluno</small>

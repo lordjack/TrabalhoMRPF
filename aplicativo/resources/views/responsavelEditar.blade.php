@@ -3,7 +3,7 @@
 @section('titulo', 'Cadastrar Responsável')
 
 @section('form')
-
+<h3 class="h3">Edite o Responsável</h3><br>
     <form class="form-group" action="{{ action('ResponsavelAlunoController@salvar', $responsavel->id) }}" method="post">
       @csrf
       <label>Nome</label><br>

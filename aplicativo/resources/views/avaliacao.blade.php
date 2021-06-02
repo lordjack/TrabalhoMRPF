@@ -20,6 +20,9 @@
       <a class="nav-link  text-white" href="{{ url('/cursos')}}">Cursos</a>
           </li>
           <li class="navbar-item active">
+            <a class="nav-link  text-white" href="{{ url('/responsavel')}}">Responsável</a>
+                </li>
+          <li class="navbar-item active">
       <a class="nav-link  text-white" href="{{ action('AlunoController@listar', $aluno->turma_id) }}">Voltar</a>
           </li>
         </ul>

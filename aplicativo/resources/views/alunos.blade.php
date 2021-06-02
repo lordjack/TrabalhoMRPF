@@ -647,7 +647,7 @@ $h12 = array(
 
 ?>
 <script>
-window.onload = function() {
+    window.onload = function() {
 
 
 var chart1 = new CanvasJS.Chart("graficoh1", {
@@ -876,56 +876,83 @@ chart15.render();
 
 @section('cabecalho')
 <h3 class="h3">Alunos Cadastrados</h3><br>
-  <a class="btn btn-outline-primary" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar aluno</a>
+<a class="btn btn-outline-primary" href="{{ action('AlunoController@cadastrar', $alunos->turma_id)}}">Cadastrar
+    aluno</a>
 @stop
 
 
 @section('listagem')<br>
 
 <table class='table'>
-<tr>
-  <th>Nome</th>
-  <th>Número</th>
-  <th>Matrícula</th>
-  <th>Turma</th>
-  <th>Email</th>
-  <th>Contato</th>
-  <th>Contato dos Responsáveis</th>
-  <th>Ações</th>
-</tr>
+    <tr>
+        <th>Nome</th>
+        <th>Número</th>
+        <th>Matrícula</th>
+        <th>Turma</th>
+        <th>Email</th>
+        <th>Contato</th>
+        <th>Contato dos Responsáveis</th>
+        <th>Ações</th>
+    </tr>
 
-  @foreach($alunos as $item)
-<tr>
-    <td>{{$item->nome}}</td>
-    <td>{{$item->numero}}</td>
-    <td>{{$item->matricula}}</td>
-    <td>{{$item->turma}}</td>
-    <td>{{$item->email}}</td>
-    <td>{{$item->contato}}</td>
-    <td>{{$item->contato_responsaveis}}</td>
-    <td>
-      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
-      <a class="btn btn-primary btn-sm mt-1" onclick=" return confirm('Remover aluno?');" href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
-      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a>
-      <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver notas</a>
-    </td>
-</tr>
-  @endforeach
+    @foreach($alunos as $item)
+    <tr>
+        <td>{{$item->nome}}</td>
+        <td>{{$item->numero}}</td>
+        <td>{{$item->matricula}}</td>
+        <td>{{$item->turma}}</td>
+        <td>{{$item->email}}</td>
+        <td>{{$item->contato}}</td>
+        <td>{{$item->contato_responsaveis}}</td>
+        <td>
+            <a class="btn btn-primary btn-sm mt-1" href="{{ action('AlunoController@editar', $item->id) }}">Editar</a>
+            <a class="btn btn-primary btn-sm mt-1" onclick=" return confirm('Remover aluno?');"
+                href="{{ action('AlunoController@deletar', $item->id) }}">Excluir</a>
+            <a class="btn btn-primary btn-sm mt-1"
+                href="{{ action('AvaliacaoController@cadastrar', $item->id) }}">Avaliar</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{ action('AvaliacaoController@listar', $item->id) }}">Ver
+                notas</a>
+        </td>
+    </tr>
+    @endforeach
 
 </table>
-<div id="graficoc1" style="height: 200px; width: 30%;"></div>
-<div id="graficoc2" style="height: 200px; width: 30%;"></div>
-<div id="graficoc3" style="height: 200px; width: 30%;"></div>
-<div id="graficoh1" style="height: 200px; width: 30%;"></div>
-<div id="graficoh2" style="height: 200px; width: 30%;"></div>
-<div id="graficoh3" style="height: 200px; width: 30%;"></div>
-<div id="graficoh4" style="height: 200px; width: 30%;"></div>
-<div id="graficoh5" style="height: 200px; width: 30%;"></div>
-<div id="graficoh6" style="height: 200px; width: 30%;"></div>
-<div id="graficoh7" style="height: 200px; width: 30%;"></div>
-<div id="graficoh8" style="height: 200px; width: 30%;"></div>
-<div id="graficoh9" style="height: 200px; width: 30%;"></div>
-<div id="graficoh10" style="height: 200px; width: 30%;"></div>
-<div id="graficoh11" style="height: 200px; width: 30%;"></div>
-<div id="graficoh12" style="height: 200px; width: 30%;"></div>
+<div class="row">
+    <div class="col-3">
+        <div id="graficoh1" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh2" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh3" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh4" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh5" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh6" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh7" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh8" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh9" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh10" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh11" style="height: 200px; width: 100%;"></div>
+    </div>
+    <div class="col-3">
+        <div id="graficoh12" style="height: 200px; width: 100%;"></div>
+    </div>
+</div>
 @stop

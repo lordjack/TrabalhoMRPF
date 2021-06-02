@@ -9,7 +9,7 @@
 
 <body>
     <div class="bg-primary">
-<<<<<<< HEAD
+
         <nav class="navbar navbar-expand-lg navbar-light" style="display:inline">
             <ul class="navbar-nav ml-5">
                 <li class="navbar-item active">
@@ -22,37 +22,16 @@
                     <a class="nav-link  text-white" href="{{ url('/cursos')}}">Cursos</a>
                 </li>
                 <li class="navbar-item active">
-                    <a class="nav-link  text-white" href="{{ url('/responsavel')}}">Responsaveis</a>
+                    <a class="nav-link  text-white" href="{{ url('/responsavel')}}">Responsável</a>
                 </li>
                 <li class="navbar-item active">
                     <a class="nav-link  text-white" href="{{ url('/escolas')}}">Escolas</a>
                 </li>
-                <li class="navbar-item active">
-                    <a class="nav-link  text-white" href="{{ url()->previous() }}">Voltar</a>
+                <a class="nav-link  text-white" href="{{ url()->previous() }}">Voltar</a>
                 </li>
             </ul>
         </nav>
-=======
-    <nav class="navbar navbar-expand-lg navbar-light" style="display:inline">
-        <ul class="navbar-nav ml-5">
-          <li class="navbar-item active">
-      <a  class="nav-link  text-white" href="{{ url('/turmas')}}">Turmas</a>
-          </li>
-          <li class="navbar-item active">
-      <a class="nav-link  text-white" href="{{ url('/professores')}}">Professores</a>
-          </li>
-          <li class="navbar-item active">
-      <a class="nav-link  text-white" href="{{ url('/cursos')}}">Cursos</a>
-          </li>
-          <li class="navbar-item active">
-            <a class="nav-link  text-white" href="{{ url('/responsavel')}}">Responsável</a>
-                </li>
-          <li class="navbar-item active">
-      <a class="nav-link  text-white" href="{{ url()->previous() }}">Voltar</a>
-          </li>
-        </ul>
-    </nav>
->>>>>>> 94db5173946582bdbc530f3a210f74d09952ad54
+
     </div>
     <div class="container mt-4">
 

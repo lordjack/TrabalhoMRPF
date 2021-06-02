@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TurmaController@listar');
 
-Route::get('/login', function (){
-  return view('login');
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/avaliacao/cadastrar/{id}', 'AvaliacaoController@cadastrar');
@@ -55,3 +55,9 @@ Route::get('/responsavel/cadastrar', 'ResponsavelAlunoController@cadastrar');
 Route::post('/responsavel/salvar/{id}', 'ResponsavelAlunoController@salvar');
 Route::get('/responsavel/editar/{id}', 'ResponsavelAlunoController@editar');
 Route::get('/responsavel/deletar/{id}', 'ResponsavelAlunoController@deletar');
+
+Route::get('/escolas', 'EscolaController@listar');
+Route::get('/escolas/cadastrar', 'EscolaController@cadastrar');
+Route::post('/escolas/salvar/{id}', 'EscolaController@salvar');
+Route::get('/escolas/editar/{id}', 'EscolaController@editar');
+Route::get('/escolas/deletar/{id}', 'EscolaController@deletar');

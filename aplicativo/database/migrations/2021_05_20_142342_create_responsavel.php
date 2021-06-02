@@ -17,18 +17,10 @@ class CreateResponsavel extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email');
-            //  $table->foreignId('resp_id')->nullable()->constrained('aluno');
             $table->string('contato');
             $table->foreignId('resp_id')->constrained('aluno');
-            //  $table->bigInteger('resp_id');
-            // $table->foreign('resp_id')->references('id')->on('aluno');
-            //    $table->foreign('resp_id')->references('id')->on('aluno');
-
             $table->timestamps();
         });
-        /* Schema::table('responsavel', function ($table) {
-            $table->foreign('resp_id')->references('id')->on('aluno');
-        }); */
     }
 
     /**

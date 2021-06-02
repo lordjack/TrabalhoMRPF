@@ -14,7 +14,11 @@
       <label>Contato</label><br>
       <input class="form-control" type="text" name="contato" value="{{$professores->contato}}"><br>
       <label>Área</label><br>
-      <input class="form-control" type="text" name="area" value="{{$professores->area}}"><br>
+      <select class="form-control" name="disc_id">
+        @foreach($disciplinas as $item)
+        <option value="{{$item->id}}"><?php echo $item->nome ?></option>
+        @endforeach
+      </select><br>
       <label>Titulação</label><br>
       <input class="form-control" type="text" name="titulacao" value="{{$professores->titulacao}}"><br>
       <label>Formação</label><br>

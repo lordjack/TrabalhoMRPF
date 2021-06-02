@@ -12,8 +12,12 @@
       <input class="form-control" type="email" name="email" required><br>
       <label>Contato</label><br>
       <input class="form-control" type="text" name="contato" required><br>
-      <label>Área</label><br>
-      <input class="form-control" type="text" name="area" required><br>
+      <label>Disciplina</label><br>
+      <select class="form-control" name="disc_id">
+        @foreach($disciplinas as $item)
+        <option value="{{$item->id}}"><?php echo $item->nome ?></option>
+        @endforeach
+      </select><br>
       <label>Titulação</label><br>
       <input class="form-control" type="text" name="titulacao" required><br>
       <label>Formação</label><br>

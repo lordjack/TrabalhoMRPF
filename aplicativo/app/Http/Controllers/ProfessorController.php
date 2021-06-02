@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Professor;
-use App\Pessoa;
+use App\Disciplina;
 use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
@@ -15,7 +15,10 @@ class ProfessorController extends Controller
   }
   public function cadastrar()
   {
-    return view('professorCadastrar');
+
+    $disciplinas = Disciplina::get();
+
+    return view('professorCadastrar')->with('disciplinas',$disciplinas);
   }
   public function salvar(Request $request, $id)
   {
@@ -24,7 +27,7 @@ class ProfessorController extends Controller
     $professor->nome = $request->input('nome');
     $professor->email = $request->input('email');
     $professor->contato = $request->input('contato');
-    $professor->area = $request->input('area');
+    $professor->disc_id = $request->input('disc_id');
     $professor->titulacao = $request->input('titulacao');
     $professor->formacao = $request->input('formacao');
 
@@ -36,7 +39,7 @@ class ProfessorController extends Controller
     $professor->nome = $request->input('nome');
     $professor->email = $request->input('email');
     $professor->contato = $request->input('contato');
-    $professor->area = $request->input('area');
+    $professor->disc_id = $request->input('disc_id');
     $professor->titulacao = $request->input('titulacao');
     $professor->formacao = $request->input('formacao');
 
@@ -48,8 +51,9 @@ class ProfessorController extends Controller
 public function editar($id)
 {
   $professor = Professor::find($id);
+  $disciplinas = Disciplina::get();
 
-  return view('professorEditar')->with('professores',$professor);
+  return view('professorEditar')->with('professores',$professor)->with('disciplinas',$disciplinas);
 }
 
 public function deletar($id)

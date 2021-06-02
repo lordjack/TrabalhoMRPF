@@ -15,7 +15,7 @@
   <th>Nome</th>
   <th>E-Mail</th>
   <th>Contato</th>
-  <th>Area</th>
+  <th>Disciplina</th>
   <th>Titulação</th>
   <th>Formação</th>
   <th>Ações</th>
@@ -26,7 +26,7 @@
     <td>{{$item->nome}}</td>
     <td>{{$item->email}}</td>
     <td>{{$item->contato}}</td>
-    <td>{{$item->area}}</td>
+    <td>{{$item->disciplina->nome}}</td>
     <td>{{$item->titulacao}}</td>
     <td>{{$item->formacao}}</td>
     <td>

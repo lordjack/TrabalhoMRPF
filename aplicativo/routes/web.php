@@ -110,6 +110,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/escolas/editar/{id}', 'EscolaController@editar');
     Route::get('/escolas/deletar/{id}', 'EscolaController@deletar');
 
+    Route::get('/disciplina', 'DisciplinaController@listar');
+    Route::get('/disciplina/cadastrar', 'DisciplinaController@cadastrar');
+    Route::post('/disciplina/salvar/{id}', 'DisciplinaController@salvar');
+    Route::get('/disciplina/editar/{id}', 'DisciplinaController@editar');
+    Route::get('/disciplina/deletar/{id}', 'DisciplinaController@deletar');
+
 
     //  Route::resource('turma', 'TurmaController');
 

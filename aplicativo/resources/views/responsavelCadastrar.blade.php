@@ -3,7 +3,7 @@
 @section('titulo', 'Cadastrar Responsável')
 
 @section('form')
-<h3 class="h3">Cadastrar Responsável</h3><br>
+<h3 class="h3">Cadastre um Responsável</h3><br>
     <form class="form-group" action="{{ action('ResponsavelAlunoController@salvar', 0) }}" method="post">
       @csrf
       <label>Nome</label><br>
@@ -14,11 +14,11 @@
       <input class="form-control" type="text" name="contato" required><br>
       <label>Responsável do Aluno</label><br>
       <select class="form-control" name="resp_id">
-          <option>Nome do aluno</option>
         @foreach($alunos as $item)
         <option value="{{$item->id}}"><?php echo $item->nome ?></option>
         @endforeach
-      </select><br>
+      </select>
+    <br>
       <input type="submit" class="btn btn-primary" value="Salvar">
       </form>
       <a class="btn btn-primary" href="{{ url()->previous()}}">Voltar</a>

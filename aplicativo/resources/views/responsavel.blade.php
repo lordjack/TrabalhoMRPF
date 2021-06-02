@@ -4,7 +4,7 @@
 
 
 @section('cabecalho')
-  <h3 class="h3">Responsáveis Cadastrados:</h3><br>
+  <h3 class="h3">Listagem de Responsáveis</h3><br>
   <a class="btn btn-outline-primary" href="{{ action('ResponsavelAlunoController@cadastrar') }}">Cadastrar Responsavel</a>
 @stop
 

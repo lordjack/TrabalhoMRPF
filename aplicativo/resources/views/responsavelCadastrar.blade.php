@@ -3,6 +3,7 @@
 @section('titulo', 'Cadastrar Responsável')
 
 @section('form')
+<h3 class="h3">Cadastrar Responsável</h3><br>
     <form class="form-group" action="{{ action('ResponsavelAlunoController@salvar', 0) }}" method="post">
       @csrf
       <label>Nome</label><br>

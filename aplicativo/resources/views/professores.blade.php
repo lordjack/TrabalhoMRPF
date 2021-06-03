@@ -26,7 +26,7 @@
     <td>{{$item->nome}}</td>
     <td>{{$item->email}}</td>
     <td>{{$item->contato}}</td>
-    <td>{{$item->disciplina->nome}}</td>
+    <td>{{$item->disciplina->name}}</td>
     <td>{{$item->titulacao}}</td>
     <td>{{$item->formacao}}</td>
     <td>

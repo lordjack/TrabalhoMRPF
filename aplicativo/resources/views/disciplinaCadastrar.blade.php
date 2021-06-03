@@ -7,7 +7,7 @@
     <form class="form-group" action="{{ action('DisciplinaController@salvar', 0) }}" method="post">
       @csrf
       <label>Nome</label><br>
-      <input class="form-control" type="text" name="nome" required><br>
+      <input class="form-control" type="text" name="name" required><br>
       <label>Turno</label><br>
       <select class="form-control" name="turno" value="turno" required>
         <option value="Matutino">Matutino</option>

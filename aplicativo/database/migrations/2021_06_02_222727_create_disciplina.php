@@ -15,7 +15,7 @@ class CreateDisciplina extends Migration
     {
         Schema::create('disciplina', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('name');
             $table->string('turno');
             $table->string('carga_hr');
             $table->timestamps();

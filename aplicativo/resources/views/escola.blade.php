@@ -3,8 +3,8 @@
 @section('titulo', 'Escolas')
 
 @section('cabecalho')
-<h3>Escolas Cadastrados:</h3>
-<a class="btn btn-outline-primary" href="{{ action('EscolaController@cadastrar') }}">Cadastrar Escola</a>
+<h3>Listagem de Escolas</h3>
+<a class="btn btn-outline-primary" href="{{ action('EscolaController@cadastrar') }}">Cadastrar</a>
 @stop
 
 
@@ -22,6 +22,7 @@
         <th>Cidade_id</th>
         <th>Bairro</th>
         <th>Tipo</th>
+        <th>Ações</th>
     </tr>
 
     @foreach($escola as $item)

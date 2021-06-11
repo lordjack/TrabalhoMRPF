@@ -234,3 +234,26 @@ INSERT INTO `usuario` (`id`, `nome`, `telefone`, `cpf`, `created_at`, `updated_a
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+CREATE TABLE `escolas` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`nome` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`cep` VARCHAR(12) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`telefone` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`rua` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`numero` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`cnpj` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`email` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`sigla` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`cidade_id` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`bairro` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`tipo` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`created_at` TIMESTAMP NULL DEFAULT NULL,
+	`updated_at` TIMESTAMP NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_unicode_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+

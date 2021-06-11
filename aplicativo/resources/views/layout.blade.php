@@ -31,6 +31,9 @@
                         <a class="nav-link  text-white" href="{{ url('/responsavel')}}">Responsaveis</a>
                     </li>
                     <li class="navbar-item active">
+                        <a class="nav-link  text-white" href="{{ url('/disciplina')}}">Disciplinas</a>
+                    </li>
+                    <li class="navbar-item active">
                         <a class="nav-link  text-white" href="{{ url('/escolas')}}">Escolas</a>
                     </li>
                     <li class="navbar-item active">
